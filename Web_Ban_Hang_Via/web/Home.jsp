@@ -11,12 +11,12 @@
          <meta charset="UTF-8">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="style.css">
-        <title>JSP Page</title>
+        <title>Home</title>
     </head>
    <body>
         <header>
             <div class="logo">
-               <div><a href="">Đức Cảnh Shop</a> </div>
+               <div><a href="">Trung Kiên Shop</a> </div>
             </div>
             <div class="menu">
                 
@@ -68,7 +68,7 @@
                <ul>
                     <li>+ MB Bank</li>
                     <li>+ 0962632354</li>
-                    <li>+ Nguyễn Dức Cảnh</li>
+                    <li>+ Trần Trung Kiên</li>
                 </ul>
             </div>
         </footer>
