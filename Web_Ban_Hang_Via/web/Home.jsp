@@ -10,28 +10,28 @@
     <head>
          <meta charset="UTF-8">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="styleHome.css">
         <title>Home</title>
     </head>
    <body>
         <header>
             <div class="logo">
-               <div><a href="">Trung Kiên Shop</a> </div>
+               <div><a href="Home.jsp">Dức Cảnh</a> </div>
             </div>
             <div class="menu">
                 
                 <li><a href="">Home</a></li>
-                <li><a href="">Mua Hàng</a>
+                <li><a href="">Via Facebook</a>
                     <ul class="menuMuaHang">
-                        <li><a href="">Danh sách BM</a></li>
-                        <li><a href="">TikTok</a></li>
-                        <li><a href="">Danh sách Via Philipines</a></li>
-                        <li><a href="">Danh sách Via EU</a></li>
-                        <li><a href="">Danh sách Clone</a></li>
+                        <li><a href="">Via Việt Nam</a></li>
+                        <li><a href="">Via Philippines</a></li>
+                        <li><a href="">Via Thái Lan</a></li>
+                        <li><a href="">Via EU</a></li>
+                        <li><a href="">Via Clone</a></li>
                      </ul>
                     </li>
                     
-                <li><a href=""> Tạo Phôi XMDT</a></li>
+                    <li><a href="TaoPhoiXMDT.jsp" target="_blank"> Tạo Phôi XMDT</a></li>
                 <li><a href="">Kết nối API</a></li>
                 <li><a href="">Check live UID</a></li>
                 <li><a href="">2FA Tool</a></li>
@@ -41,7 +41,7 @@
             <div class="other">
                 <li type="text"> <input type="text"  placeholder="Tìm Kiếm" style=""> <button type="submit" class="">SEARCH</button></li>
            
-                <li><a href="">Login</a></li>
+                <li><a href="Login.jsp">Login</a></li>
                 
             </div>
         </header>
@@ -68,7 +68,7 @@
                <ul>
                     <li>+ MB Bank</li>
                     <li>+ 0962632354</li>
-                    <li>+ Trần Trung Kiên</li>
+                    <li>+ Đức Cảnh</li>
                 </ul>
             </div>
         </footer>
