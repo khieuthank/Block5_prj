@@ -10,7 +10,7 @@
     <head>
          <meta charset="UTF-8">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="Style/styleHome.css">
+        <link rel="stylesheet" href="StyleCss/styleHome.css">
         <title>Home</title>
     </head>
    <body>
@@ -42,6 +42,7 @@
                 <li type="text"> <input type="text"  placeholder="Tìm Kiếm" style=""> <button type="submit" class="">SEARCH</button></li>
            
                 <li><a href="Login.jsp">Login</a></li>
+                <li><a href="Register.jsp">Register</a></li>
                 
             </div>
         </header>
