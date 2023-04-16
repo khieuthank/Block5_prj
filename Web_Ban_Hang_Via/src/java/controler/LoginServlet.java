@@ -42,7 +42,7 @@ public class LoginServlet extends HttpServlet {
         } else {
             HttpSession session = request.getSession();
             session.setAttribute("acc", a);
-            session.setMaxInactiveInterval(1000);
+            //session.setMaxInactiveInterval(1000);
             response.sendRedirect("Home.jsp");
         }
     }

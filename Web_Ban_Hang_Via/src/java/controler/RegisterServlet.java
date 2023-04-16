@@ -4,6 +4,8 @@
  */
 package controler;
 
+import dao.DAO;
+import entity.Account;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -29,17 +31,22 @@ public class RegisterServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try ( PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet RegisterServlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet RegisterServlet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        String user = request.getParameter("user");
+        String pass = request.getParameter("pass");
+        String re_pass = request.getParameter("repass");
+        if (!pass.equals(re_pass)) {
+            response.sendRedirect("Login.jsp");
+        } else {
+            DAO dao = new DAO();
+            Account a = dao.checkAccountExist(user);
+            if (a == null) {
+                //dc signup
+                dao.singup(user, pass);
+                response.sendRedirect("home");
+            } else {
+                //day ve trang login.jsp
+                response.sendRedirect("Login.jsp");
+            }
         }
     }
 
