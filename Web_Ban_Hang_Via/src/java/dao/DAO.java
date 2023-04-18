@@ -6,9 +6,12 @@ package dao;
 
 import entity.Account;
 import entity.DBContext;
+import entity.Product;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -61,7 +64,8 @@ public class DAO {
         }
         return null;
     }
-     public void singup(String user, String pass) {
+
+    public void singup(String user, String pass) {
         String query = "insert into Account values (?,?,0,0)";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
@@ -73,4 +77,31 @@ public class DAO {
         }
     }
 
+    public List<Product> gettAllProduct() {
+        List<Product> list = new ArrayList<>();
+        String query = "select * from product";
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            while (rs.next()) {
+                list.add(new Product(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getDouble(4),
+                        rs.getString(5),
+                        rs.getString(6)));
+            }
+        } catch (Exception e) {
+        }
+        return list;
+    }
+
+    public static void main(String[] args) {
+        DAO dao = new DAO();
+        List<Product> list = dao.gettAllProduct();
+        for (Product s : list) {
+            System.out.println(s);
+        }
+
+    }
 }
