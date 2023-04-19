@@ -83,6 +83,7 @@ public class DAO {
         try {
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
+            rs =ps.executeQuery();
             while (rs.next()) {
                 list.add(new Product(rs.getInt(1),
                         rs.getString(2),
@@ -96,12 +97,12 @@ public class DAO {
         return list;
     }
 
-    public static void main(String[] args) {
-        DAO dao = new DAO();
-        List<Product> list = dao.gettAllProduct();
-        for (Product s : list) {
-            System.out.println(s);
-        }
-
-    }
+//    public static void main(String[] args) {
+//        DAO dao = new DAO();
+//        List<Product> list = dao.gettAllProduct();
+//        for (Product s : list) {
+//            System.out.println(s);
+//        }
+//
+//    }
 }

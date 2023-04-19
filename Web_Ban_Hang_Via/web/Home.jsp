@@ -8,18 +8,18 @@
 <!DOCTYPE html>
 <html>
     <head>
-         <meta charset="UTF-8">
+        <meta charset="UTF-8">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="StyleCss/styleHome.css">
         <title>Home</title>
     </head>
-   <body>
+    <body>
         <header>
             <div class="logo">
-               <div><a href="Home.jsp">Dức Cảnh</a> </div>
+                <div><a href="Home.jsp">Dức Cảnh</a> </div>
             </div>
             <div class="menu">
-                
+
                 <li><a href="">Home</a></li>
                 <li><a href="">Via Facebook</a>
                     <ul class="menuMuaHang">
@@ -28,10 +28,10 @@
                         <li><a href="">Via Thái Lan</a></li>
                         <li><a href="">Via EU</a></li>
                         <li><a href="">Via Clone</a></li>
-                     </ul>
-                    </li>
-                    
-                    <li><a href="TaoPhoiXMDT.jsp" target="_blank"> Tạo Phôi XMDT</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="TaoPhoiXMDT.jsp" target="_blank"> Tạo Phôi XMDT</a></li>
                 <li><a href="">Kết nối API</a></li>
                 <li><a href="">Check live UID</a></li>
                 <li><a href="">2FA Tool</a></li>
@@ -40,10 +40,12 @@
             </div>
             <div class="other">
                 <li type="text"> <input type="text"  placeholder="Tìm Kiếm" style=""> <button type="submit" class="">SEARCH</button></li>
-           
-                <li><a href="Login.jsp">Login</a></li>
-                <li><a href="Register.jsp">Register</a></li>
-                
+                <div class="loginAndRegister">
+                    <c:if test="${sessionScope.acc == null}">
+                        <li><a href="Login.jsp">Login</a></li>
+                        <li><a href="Register.jsp">Register</a></li>
+                    </c:if>
+                </div>
             </div>
         </header>
         <section class="app-container">
@@ -51,7 +53,7 @@
                 Nhận tư vấn
             </p>
             <input type="text" placeholder="Nhập số điện thoại của bạn...">
- 
+
         </section>
 
         <footer>
@@ -66,7 +68,7 @@
                     Nhận chạy quảng cáo-cấp tài khoản ăn chi không phí
                     -cung cấp nhiên liệu chạy quảng cáo FB-xây dựng thương hiệu. <br>
                 </p>
-               <ul>
+                <ul>
                     <li>+ MB Bank</li>
                     <li>+ 0962632354</li>
                     <li>+ Đức Cảnh</li>
