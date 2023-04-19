@@ -41,7 +41,7 @@ public class LoginServlet extends HttpServlet {
             request.getRequestDispatcher("Login.jsp").forward(request, response);
         } else {
             HttpSession session = request.getSession();
-            session.setAttribute("acc", a);
+            session.setAttribute("username", a);
             //session.setMaxInactiveInterval(1000);
             response.sendRedirect("Home.jsp");
         }

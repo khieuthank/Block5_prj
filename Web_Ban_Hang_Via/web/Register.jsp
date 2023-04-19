@@ -13,29 +13,27 @@
         <title>Sign Up</title>
     </head>
     <body>
-        <form action="register" style="border:1px solid #ccc">
+        <form action="register" method="post" style="border:1px solid #ccc">
             <div class="container">
                 <h1>Sign Up</h1>
                 <p>Please fill in this form to create an account.</p>
                 <hr>
 
                 <label for="email"><b>Email or Phone Number</b></label>
-                <input type="text" placeholder="Enter Email" name="email or phone number" required>
+                <input type="text" placeholder="Enter Email" name="account" required>
 
                 <label for="psw"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="psw" required>
+                <input type="password" placeholder="Enter Password" name="password" required>
 
                 <label for="psw-repeat"><b>Repeat Password</b></label>
-                <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+                <input type="password" placeholder="Repeat Password" name="repassword" required>
 
                 <label>
                     <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-                </label>
-
-                <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+                </label>         
 
                 <div class="clearfix">
-                    <button type="button" class="cancelbtn"><a href="Home.jsp" style="text-decoration: none">Cancel</a></button>
+                    <a href="Home.jsp" style="text-decoration: none"><button type="button" class="cancelbtn" >Cancel</button></a>
                     <button type="submit" class="signupbtn">Sign Up</button>
                 </div>
             </div>
