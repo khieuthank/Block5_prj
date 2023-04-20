@@ -13,30 +13,35 @@
         <title>Sign Up</title>
     </head>
     <body>
-        <form action="register" method="post" style="border:1px solid #ccc">
-            <div class="container">
-                <h1>Sign Up</h1>
-                <p>Please fill in this form to create an account.</p>
-                <hr>
+        <div class="container" style="text-align: center">
+            <div class="row justify-content-center">
+                <div class="col-md-5">
+                    <div class="card">
+                        <h2 class="card-title text-center">Register</h2>
+                        <div class="card-body py-md-4">
+                            <form action="register" method="post">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Enter Email" name="account" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" placeholder="Enter Password" name="password" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control"  placeholder="Repeat Password" name="repassword" required>
+                                </div>
+                                <div class="d-flex flex-row align-items-center justify-content-between">
+                                    <a href="Login.jsp"> </a>
+                                    <button class="btn btn-primary" type="submit" class="signupbtn">Create Account</button>
+                                </div>
+                            </form>
 
-                <label for="email"><b>Email or Phone Number</b></label>
-                <input type="text" placeholder="Enter Email" name="account" required>
-
-                <label for="psw"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="password" required>
-
-                <label for="psw-repeat"><b>Repeat Password</b></label>
-                <input type="password" placeholder="Repeat Password" name="repassword" required>
-
-                <label>
-                    <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-                </label>         
-
-                <div class="clearfix">
-                    <a href="Home.jsp" style="text-decoration: none"><button type="button" class="cancelbtn" >Cancel</button></a>
-                    <button type="submit" class="signupbtn">Sign Up</button>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </form>
+        </div>
+        <label>
+            <p class="text-danger">${mess}</p>
+        </label>
     </body>
 </html>

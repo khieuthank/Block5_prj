@@ -33,8 +33,10 @@ public class RegisterServlet extends HttpServlet {
         String user = request.getParameter("account");
         String pass = request.getParameter("password");
         String re_pass = request.getParameter("repassword");
-        if (!pass.equals(re_pass)) {            
-            response.sendRedirect("Register.jsp");
+        if (!pass.equals(re_pass)) {     
+            request.setAttribute("mess", "Wrong Repeat Password!");
+            request.getRequestDispatcher("Register.jsp").forward(request, response);
+           // response.sendRedirect("Register.jsp");
         } else {
             DAO dao = new DAO();
             Account a = dao.checkAccountExist(user);
@@ -44,7 +46,9 @@ public class RegisterServlet extends HttpServlet {
                 response.sendRedirect("Login.jsp");
             } else {
                 //day ve trang login.jsp
-                response.sendRedirect("Register.jsp");
+                request.setAttribute("mess", "Account exit!");
+                //response.sendRedirect("Register.jsp");
+                request.getRequestDispatcher("Register.jsp").forward(request, response);
             }
         }
     }
