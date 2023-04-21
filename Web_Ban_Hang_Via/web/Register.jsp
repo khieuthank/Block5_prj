@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="StyleCss/styleRegister.css">
+        <link rel="stylesheet" href="css/styleRegister.css">
         <title>Sign Up</title>
     </head>
     <body>
