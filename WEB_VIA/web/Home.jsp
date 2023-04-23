@@ -5,6 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="zxx">
@@ -41,28 +43,31 @@
         <div class="humberger__menu__overlay"></div>
         <div class="humberger__menu__wrapper">
             <div class="humberger__menu__logo">
-                <a href="#"><img src="img/logo.png" alt=""></a>
+                <a href="Home."><img src="img/logo.jpg" alt=""></a>
             </div>
             <div class="humberger__menu__cart">
                 <ul>
                     <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
                     <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
                 </ul>
-                <div class="header__cart__price">item: <span>$150.00</span></div>
+                <!--                <div class="header__cart__price">item: <span>$150.00</span></div>-->
             </div>
-            <div class="humberger__menu__widget">
-                <div class="header__top__right__language">
-                    <img src="img/language.png" alt="">
-                    <div>English</div>
-                    <span class="arrow_carrot-down"></span>
-                    <ul>
-                        <li><a href="#">Spanis</a></li>
-                        <li><a href="#">English</a></li>
-                    </ul>
-                </div>
-                <div class="header__top__right__auth">
-                    <a href="#"><i class="fa fa-user"></i> Login</a>
-                </div>
+            <div class="humberger__menu__widget"> 
+                <c:if test="${sessionScope.username == null}">
+                    <div class="header__top__right__auth">
+                        <a href="Login.jsp"><i class="fa fa-user"></i> Login</a>
+                    </div>
+
+                    <div class="header__top__right__auth">
+                        <a href="Register.jsp"><i class="fa fa-user"></i> Register</a>
+                    </div>
+                </c:if>
+                <c:if test="${sessionScope.username != null}">
+                    <div class="header__top__right__auth">
+                        <a href="#"><i class="fa fa-user"></i> Log Out</a>
+                    </div>
+                </c:if>
+
             </div>
             <nav class="humberger__menu__nav mobile-menu">
                 <ul>
@@ -89,8 +94,8 @@
             </div>
             <div class="humberger__menu__contact">
                 <ul>
-                    <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
-                    <li>Free Shipping for all Order of $99</li>
+                    <li><i class="fa fa-envelope"></i> kientthe160037@fpt.edu.vn</li>
+                    <li>Shop bán via FB & Hỗ trợ fb 24/7</li>
                 </ul>
             </div>
         </div>
@@ -104,8 +109,8 @@
                         <div class="col-lg-6 col-md-6">
                             <div class="header__top__left">
                                 <ul>
-                                    <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
-                                    <li>Free Shipping for all Order of $99</li>
+                                    <li><i class="fa fa-envelope"></i> kientthe160037@fpt.edu.vn</li>
+                                    <li>Shop bán via FB & Hỗ trợ fb 24/7</li>
                                 </ul>
                             </div>
                         </div>
@@ -117,17 +122,21 @@
                                     <a href="#"><i class="fa fa-linkedin"></i></a>
                                     <a href="#"><i class="fa fa-pinterest-p"></i></a>
                                 </div>
-                                <div class="header__top__right__language">
-                                    <img src="img/language.png" alt="">
-                                    <div>English</div>
-                                    <span class="arrow_carrot-down"></span>
-                                    <ul>
-                                        <li><a href="#">Spanis</a></li>
-                                        <li><a href="#">English</a></li>
-                                    </ul>
-                                </div>
                                 <div class="header__top__right__auth">
-                                    <a href="#"><i class="fa fa-user"></i> Login</a>
+                                    <c:if test="${sessionScope.username == null}">
+                                        <div class="header__top__right__auth">
+                                            <a href="Login.jsp"><i class="fa fa-user"></i> Login</a>
+                                        </div>
+
+                                        <div class="header__top__right__auth">
+                                            <a href="Register.jsp"><i class="fa fa-user"></i> Register</a>
+                                        </div>
+                                    </c:if>
+                                    <c:if test="${sessionScope.username != null}">
+                                        <div class="header__top__right__auth">
+                                            <a href="LogoutServlet"><i class="fa fa-user"></i> Log Out</a>
+                                        </div>
+                                    </c:if>
                                 </div>
                             </div>
                         </div>
@@ -138,7 +147,7 @@
                 <div class="row">
                     <div class="col-lg-3">
                         <div class="header__logo">
-                            <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                            <a href="Home/jsp"><img src="img/logo.jpg" alt=""></a>
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -165,7 +174,7 @@
                                 <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
                                 <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
                             </ul>
-                            <div class="header__cart__price">item: <span>$150.00</span></div>
+
                         </div>
                     </div>
                 </div>
@@ -708,13 +717,13 @@
                 <div class="row">
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="footer__about">
-                            <div class="footer__about__logo">
-                                <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                            <div class="footer__about__jsp">
+                                <a href="Home.jsp"><img src="img/logo.jpg" alt=""></a>
                             </div>
                             <ul>
-                                <li>Address: 60-49 Road 11378 New York</li>
-                                <li>Phone: +65 11.188.888</li>
-                                <li>Email: hello@colorlib.com</li>
+                                <li>Address: Thái Bình - Việt Nam</li>
+                                <li>Phone: 0862497002</li>
+                                <li>Email: kientthe160037@fpt.edu.vn</li>
                             </ul>
                         </div>
                     </div>
@@ -760,9 +769,9 @@
                     <div class="col-lg-12">
                         <div class="footer__copyright">
                             <div class="footer__copyright__text"><p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                                    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                                    Chúng tôi không chịu trách nhiệm cho bất kì hành vi sử dụng tài nguyên sai mục đích như lừa đảo chiếm đoạt tài sản, chống phá nhà nước, vi phạm pháp luật . Chúng tôi có lưu trữ thông tin để cung cấp cho cơ quan điều tra.
                                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p></div>
-                            <div class="footer__copyright__payment"><img src="img/payment-item.png" alt=""></div>
+
                         </div>
                     </div>
                 </div>

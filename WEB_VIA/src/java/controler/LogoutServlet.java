@@ -4,20 +4,19 @@
  */
 package controler;
 
-import dao.DAO;
-import entity.Account;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 /**
  *
  * @author trung
  */
-public class RegisterServlet extends HttpServlet {
+public class LogoutServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,27 +30,13 @@ public class RegisterServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String user = request.getParameter("username");
-        String pass = request.getParameter("password");
-        String re_pass = request.getParameter("repassword");
-        if (!pass.equals(re_pass)) {     
-            request.setAttribute("mess", "Wrong Repeat Password!");
-            request.getRequestDispatcher("Register.jsp").forward(request, response);
-           // response.sendRedirect("Register.jsp");
-        } else {
-            DAO dao = new DAO();
-            Account a = dao.checkAccountExist(user);
-            if (a == null) {
-                //dc signup
-                dao.singup(user, pass);
-                response.sendRedirect("Login.jsp");
-            } else {
-                //day ve trang login.jsp
-                request.setAttribute("mess", "Account exit!");
-                //response.sendRedirect("Register.jsp");
-                request.getRequestDispatcher("Register.jsp").forward(request, response);
-            }
-        }
+       response.setContentType("text/html;charset=UTF-8");
+        request.setCharacterEncoding("UTF-8");
+        PrintWriter out = response.getWriter();
+
+        HttpSession session = request.getSession();
+        session.removeAttribute("username");
+        response.sendRedirect("Home.jsp");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -4,8 +4,6 @@
  */
 package controler;
 
-import dao.DAO;
-import entity.Account;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -17,7 +15,7 @@ import jakarta.servlet.http.HttpServletResponse;
  *
  * @author trung
  */
-public class RegisterServlet extends HttpServlet {
+public class HomeServelet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,26 +29,17 @@ public class RegisterServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String user = request.getParameter("username");
-        String pass = request.getParameter("password");
-        String re_pass = request.getParameter("repassword");
-        if (!pass.equals(re_pass)) {     
-            request.setAttribute("mess", "Wrong Repeat Password!");
-            request.getRequestDispatcher("Register.jsp").forward(request, response);
-           // response.sendRedirect("Register.jsp");
-        } else {
-            DAO dao = new DAO();
-            Account a = dao.checkAccountExist(user);
-            if (a == null) {
-                //dc signup
-                dao.singup(user, pass);
-                response.sendRedirect("Login.jsp");
-            } else {
-                //day ve trang login.jsp
-                request.setAttribute("mess", "Account exit!");
-                //response.sendRedirect("Register.jsp");
-                request.getRequestDispatcher("Register.jsp").forward(request, response);
-            }
+        try ( PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet HomeServelet</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet HomeServelet at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
         }
     }
 
