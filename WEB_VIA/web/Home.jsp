@@ -43,7 +43,7 @@
         <div class="humberger__menu__overlay"></div>
         <div class="humberger__menu__wrapper">
             <div class="humberger__menu__logo">
-                <a href="Home."><img src="img/logo.jpg" alt=""></a>
+                <a href="Home.jsp"><img src="img/logo.jpg" alt=""></a>
             </div>
             <div class="humberger__menu__cart">
                 <ul>
@@ -64,25 +64,25 @@
                 </c:if>
                 <c:if test="${sessionScope.username != null}">
                     <div class="header__top__right__auth">
-                        <a href="#"><i class="fa fa-user"></i> Log Out</a>
+                        <a href="LogoutServlet"><i class="fa fa-user"></i> Log Out</a>
                     </div>
                 </c:if>
 
             </div>
             <nav class="humberger__menu__nav mobile-menu">
                 <ul>
-                    <li class="active"><a href="./index.html">Home</a></li>
+                    <li class="active"><a href="Home.jsp">Home</a></li>
                     <li><a href="./shop-grid.html">Shop</a></li>
-                    <li><a href="#">Pages</a>
+                    <li><a href="#">Danh Mục</a>
                         <ul class="header__menu__dropdown">
-                            <li><a href="./shop-details.html">Shop Details</a></li>
-                            <li><a href="./shoping-cart.html">Shoping Cart</a></li>
-                            <li><a href="./checkout.html">Check Out</a></li>
+                            <li><a href="./shop-details.html">Chi tiết sản phẩm</a></li>
+                            <li><a href="./shoping-cart.html">Giỏ hàng</a></li>
+                            <li><a href="./checkout.html">Thanh Toán</a></li>
                             <li><a href="./blog-details.html">Blog Details</a></li>
                         </ul>
                     </li>
                     <li><a href="./blog.html">Blog</a></li>
-                    <li><a href="./contact.html">Contact</a></li>
+                    <li><a href="Contact.jsp">Contact</a></li>
                 </ul>
             </nav>
             <div id="mobile-menu-wrap"></div>
@@ -147,24 +147,24 @@
                 <div class="row">
                     <div class="col-lg-3">
                         <div class="header__logo">
-                            <a href="Home/jsp"><img src="img/logo.jpg" alt=""></a>
+                            <a href="Home.jsp"><img src="img/logo.jpg" alt=""></a>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <nav class="header__menu">
                             <ul>
-                                <li class="active"><a href="./index.html">Home</a></li>
+                                <li class="active"><a href="Home.jsp">Home</a></li>
                                 <li><a href="./shop-grid.html">Shop</a></li>
-                                <li><a href="#">Pages</a>
+                                <li><a href="#">Danh Mục</a>
                                     <ul class="header__menu__dropdown">
-                                        <li><a href="./shop-details.html">Shop Details</a></li>
-                                        <li><a href="./shoping-cart.html">Shoping Cart</a></li>
-                                        <li><a href="./checkout.html">Check Out</a></li>
+                                        <li><a href="./shop-details.html">Chi tiết sản phẩm</a></li>
+                                        <li><a href="./shoping-cart.html">Giỏ hàng</a></li>
+                                        <li><a href="./checkout.html">Thanh Toán</a></li>
                                         <li><a href="./blog-details.html">Blog Details</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="./blog.html">Blog</a></li>
-                                <li><a href="./contact.html">Contact</a></li>
+                                <li><a href="./blog.html">Khóa học</a></li>
+                                <li><a href="Contact.jsp">Liên Hệ</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -742,7 +742,7 @@
                                 <li><a href="#">Who We Are</a></li>
                                 <li><a href="#">Our Services</a></li>
                                 <li><a href="#">Projects</a></li>
-                                <li><a href="#">Contact</a></li>
+                                <li><a href="Contact.jsp">Contact</a></li>
                                 <li><a href="#">Innovation</a></li>
                                 <li><a href="#">Testimonials</a></li>
                             </ul>
