@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <%@page language="java" contentType="text/html; charset=utf-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page import="java.sql.*" %>
+<%@page import = "model.*" %>
+<%@page import = "java.util.List" %>
+<%@page import = "java.util.ArrayList" %>
+<%
+List<Category> listC = (List<Category>) request.getAttribute("listC");
+%>
+<%
+  List<Product> listP = (List<Product>) request.getAttribute("listP");
+%>
+<%
+  Category c = (Category) request.getAttribute("c");
+%>  
 <html lang="zxx">
     <head>
+        <title>Shop Via FackeBook</title>
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
         <meta charset="UTF-8">
         <meta name="description" content="Ogani Template">
         <meta name="keywords" content="Ogani, unica, creative, html">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Shop Via FackeBook</title>
+
 
         <!-- Google Font -->
         <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
@@ -45,7 +60,9 @@
             </div>
             <div class="humberger__menu__widget">
                 <div class="header__top__right__auth">
+                     <c:if test="${sessionScope.acc == null}">
                     <a href="Login.jsp"><i class="fa fa-user"></i> Login</a>
+                      </c:if>
                 </div>
 
             </div>
@@ -62,8 +79,8 @@
                             <li><a href="./blog-details.html">Via XMDT</a></li>
                         </ul>
                     </li>
-                    <li><a href="./blog.html">Clone </a></li>
-                    <li><a href="./contact.html">Contact</a></li>
+                    <li><a href="./blog.html">Khóa học</a></li>
+                    <li><a href="./contact.html">Liên hệ</a></li>
                 </ul>
             </nav>
             <div id="mobile-menu-wrap"></div>
@@ -107,7 +124,9 @@
                                     <a href="Register.jsp"><i class="fa fa-user"></i>Register</a>
                                 </div>
                                 <div class="header__top__right__auth">
+                                     <c:if test="${sessionScope.acc == null}">
                                     <a href="#"><i class="fa fa-user"></i> Login</a>
+                                      </c:if>
                                 </div>
                             </div>
                         </div>
@@ -128,14 +147,15 @@
                                 <li><a href="./shop-grid.html">Shop</a></li>
                                 <li><a href="#">Pages</a>
                                     <ul class="header__menu__dropdown">
-                                        <li><a href="./shop-details.html">Shop Details</a></li>
-                                        <li><a href="./shoping-cart.html">Shoping Cart</a></li>
-                                        <li><a href="./checkout.html">Check Out</a></li>
-                                        <li><a href="./blog-details.html">Blog Details</a></li>
+                                        <li><a href="./shop-details.html">Via Việt Nam</a></li>
+                                        <li><a href="./shoping-cart.html">Via Thái Lan </a></li>
+                                        <li><a href="./checkout.html">Via Indonesia</a></li>
+                                        <li><a href="./blog-details.html">Via US</a></li>
+                                        <li><a href="./blog-details.html">Via XMDT</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="./blog.html">Blog</a></li>
-                                <li><a href="./contact.html">Contact</a></li>
+                                <li><a href="./blog.html">Khóa học</a></li>
+                                <li><a href="./contact.html">Liên hệ</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -145,7 +165,7 @@
                                 <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
                                 <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
                             </ul>
-                            <div class="header__cart__price">item: <span>$150.00</span></div>
+<!--                            <div class="header__cart__price">item: <span>$150.00</span></div>-->
                         </div>
                     </div>
                 </div>
