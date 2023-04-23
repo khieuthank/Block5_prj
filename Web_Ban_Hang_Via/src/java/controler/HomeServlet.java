@@ -7,6 +7,7 @@ package controler;
 import dao.DAO;
 import entity.Product;
 import java.io.IOException;
+import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -31,8 +32,7 @@ public class HomeServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-       
-        DAO dao = new DAO(); //
+         DAO dao = new DAO(); //
         List<Product> list = dao.gettAllProduct(); 
         
         request.setAttribute("listP", list);

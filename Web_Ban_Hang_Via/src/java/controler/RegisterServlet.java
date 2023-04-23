@@ -7,6 +7,7 @@ package controler;
 import dao.DAO;
 import entity.Account;
 import java.io.IOException;
+import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -33,10 +34,10 @@ public class RegisterServlet extends HttpServlet {
         String user = request.getParameter("account");
         String pass = request.getParameter("password");
         String re_pass = request.getParameter("repassword");
-        if (!pass.equals(re_pass)) {     
+        if (!pass.equals(re_pass)) {
             request.setAttribute("mess", "Wrong Repeat Password!");
             request.getRequestDispatcher("Register.jsp").forward(request, response);
-           // response.sendRedirect("Register.jsp");
+            // response.sendRedirect("Register.jsp");
         } else {
             DAO dao = new DAO();
             Account a = dao.checkAccountExist(user);

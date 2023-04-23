@@ -17,7 +17,7 @@
 
         <div class="grid">
 
-            <form action="login" method="post" class="form login">
+            <form action="LogoutServlet" method="post" class="form login">
 
                 <div class="form__field">
                     <label for="login__username"><svg class="icon">

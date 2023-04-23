@@ -19,7 +19,7 @@
                     <div class="card">
                         <h2 class="card-title text-center">Register</h2>
                         <div class="card-body py-md-4">
-                            <form action="register" method="post">
+                            <form action="RegisterServlet" method="post">
                                 <div class="form-group">
                                     <input type="text" class="form-control" placeholder="Enter Email" name="account" required>
                                 </div>

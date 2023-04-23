@@ -1,19 +1,5 @@
 <!DOCTYPE html>
 <%@page language="java" contentType="text/html; charset=utf-8" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@page import="java.sql.*" %>
-<%@page import = "model.*" %>
-<%@page import = "java.util.List" %>
-<%@page import = "java.util.ArrayList" %>
-<%
-List<Category> listC = (List<Category>) request.getAttribute("listC");
-%>
-<%
-  List<Product> listP = (List<Product>) request.getAttribute("listP");
-%>
-<%
-  Category c = (Category) request.getAttribute("c");
-%>  
 <html lang="zxx">
     <head>
         <title>Shop Via FackeBook</title>
@@ -125,7 +111,7 @@ List<Category> listC = (List<Category>) request.getAttribute("listC");
                                 </div>
                                 <div class="header__top__right__auth">
                                      <c:if test="${sessionScope.acc == null}">
-                                    <a href="#"><i class="fa fa-user"></i> Login</a>
+                                    <a href="Login.jsp"><i class="fa fa-user"></i> Login</a>
                                       </c:if>
                                 </div>
                             </div>
