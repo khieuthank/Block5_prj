@@ -6,6 +6,7 @@ package controler;
 
 import dao.DAO;
 import entity.Category;
+import entity.Course;
 import entity.Product;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -41,9 +42,8 @@ public class HomeServelet extends HttpServlet {
         List<Product> listaP = dao.getAfterTop3();
         List<Product> listPP = dao.getTop3ByPrice();
         List<Product> listaPP = dao.getAfterTop3ByPrice();
-        
-        
-        
+        List<Course> listCo = dao.getTop3Course();
+        List<Course> listaCo = dao.getAfterTop3Course();
 
         request.setAttribute("listP", list);
         request.setAttribute("listC", listC);
@@ -52,8 +52,9 @@ public class HomeServelet extends HttpServlet {
         request.setAttribute("listAP", listaP);
         request.setAttribute("listPP", listPP);
         request.setAttribute("listAPP", listaPP);
-        
-        
+        request.setAttribute("listCO", listCo);
+        request.setAttribute("listACO", listaCo);
+
         request.getRequestDispatcher("Home.jsp").forward(request, response);
 
     }
@@ -85,7 +86,7 @@ public class HomeServelet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-     //   processRequest(request, response);
+        //   processRequest(request, response);
     }
 
     /**

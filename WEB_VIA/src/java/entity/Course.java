@@ -9,26 +9,23 @@ package entity;
  * @author trung
  */
 public class Course {
-
     private int id;
     private String name;
-    private String description;
+    private String image ;
     private double price;
-    private String image;
     private String comment;
-    private String note;
+    private String descrption ;
 
     public Course() {
     }
 
-    public Course(int id, String name, String description, double price, String image, String comment, String note) {
+    public Course(int id, String name, String image, double price, String comment, String descrption) {
         this.id = id;
         this.name = name;
-        this.description = description;
-        this.price = price;
         this.image = image;
+        this.price = price;
         this.comment = comment;
-        this.note = note;
+        this.descrption = descrption;
     }
 
     public int getId() {
@@ -47,12 +44,12 @@ public class Course {
         this.name = name;
     }
 
-    public String getDescription() {
-        return description;
+    public String getImage() {
+        return image;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public double getPrice() {
@@ -63,14 +60,6 @@ public class Course {
         this.price = price;
     }
 
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
-    }
-
     public String getComment() {
         return comment;
     }
@@ -79,19 +68,17 @@ public class Course {
         this.comment = comment;
     }
 
-    public String getNote() {
-        return note;
+    public String getDescrption() {
+        return descrption;
     }
 
-    public void setNote(String note) {
-        this.note = note;
+    public void setDescrption(String descrption) {
+        this.descrption = descrption;
     }
 
     @Override
     public String toString() {
-        return "Course{" + "id=" + id + ", name=" + name + ", description=" + description + ", price=" + price + ", image=" + image + ", comment=" + comment + ", note=" + note + '}';
+        return "Course{" + "id=" + id + ", name=" + name + ", image=" + image + ", price=" + price + ", comment=" + comment + ", descrption=" + descrption + '}';
     }
     
-    
-
 }

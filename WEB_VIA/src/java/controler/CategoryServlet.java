@@ -4,12 +4,16 @@
  */
 package controler;
 
+import dao.DAO;
+import entity.Category;
+import entity.Product;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.util.List;
 
 /**
  *
@@ -29,18 +33,16 @@ public class CategoryServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try ( PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet CategoryServlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet CategoryServlet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
+        String cateID = request.getParameter("cid");
+        //da lay dc category id ve roi
+        DAO dao = new DAO();
+        List<Product> list = dao.getProductByCID(cateID);
+        List<Category> listC = dao.getAllCategory();
+        Product last = dao.getLast();
+
+        request.setAttribute("listP", list);
+        request.getRequestDispatcher("Home.jsp").forward(request, response);
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

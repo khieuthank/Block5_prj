@@ -197,9 +197,9 @@
                             </div>
                             <ul>
                                 <c:forEach items="${listC}" var="c">
-                                    <li><a href="#">${c.cname}</a></li>
-                                </c:forEach>
-                              </ul>
+                                    <li><a href="">${c.cname}</a></li>
+                                    </c:forEach>
+                            </ul>
 
                         </div>
                     </div>
@@ -245,13 +245,13 @@
                 <div class="row">
                     <div class="categories__slider owl-carousel">
                         <c:forEach items="${listC}" var="c">
-                               <div class="col-lg-3">
-                            <div class="categories__item set-bg" data-setbg="img/fb.jpg">
-                                <h5><a href="#">${c.cname}</a></h5>
+                            <div class="col-lg-3">
+                                <div class="categories__item set-bg" data-setbg="img/fb.jpg">
+                                    <h5><a href="#">${c.cname}</a></h5>
+                                </div>
                             </div>
-                        </div>
                         </c:forEach>
-                        
+
                     </div>
                 </div>
             </div>
@@ -269,9 +269,9 @@
                         <div class="featured__controls">
                             <ul>
                                 <li class="active" data-filter="*">All</li>
-                                <c:forEach items="${listC}" var="c">
+                                    <c:forEach items="${listC}" var="c">
                                     <li class="active" data-filter="*">${c.cname}</li>
-                                </c:forEach>
+                                    </c:forEach>
                             </ul>
                         </div>
                     </div>
@@ -329,34 +329,34 @@
                             <h4>Sản phẩm mới nhất</h4>
                             <div class="latest-product__slider owl-carousel">
                                 <div class="latest-prdouct__slider__item">
-                                    
+
                                     <c:forEach items="${listtp}" var="tp">
-                                         <a href="#" class="latest-product__item">
-                                        <div class="latest-product__item__pic">
-                                            <img src="${tp.image}" alt="">
-                                        </div>
-                                        <div class="latest-product__item__text">
-                                            <h6>${tp.name}</h6>
-                                            <span>${tp.price} $</span>
-                                        </div>
-                                    </a>
+                                        <a href="#" class="latest-product__item">
+                                            <div class="latest-product__item__pic">
+                                                <img src="${tp.image}" alt="">
+                                            </div>
+                                            <div class="latest-product__item__text">
+                                                <h6>${tp.name}</h6>
+                                                <span>${tp.price} $</span>
+                                            </div>
+                                        </a>
                                     </c:forEach>
-                                   
+
                                 </div>
                                 <div class="latest-prdouct__slider__item">
                                     <c:forEach items="${listAP}" var="ap">
                                         <a href="#" class="latest-product__item">
-                                        <div class="latest-product__item__pic">
-                                            <img src="${ap.image}" alt="">
-                                        </div>
-                                        <div class="latest-product__item__text">
-                                            <h6>${ap.name}</h6>
-                                            <span>${ap.price} $</span>
-                                        </div>
-                                    </a>
+                                            <div class="latest-product__item__pic">
+                                                <img src="${ap.image}" alt="">
+                                            </div>
+                                            <div class="latest-product__item__text">
+                                                <h6>${ap.name}</h6>
+                                                <span>${ap.price} $</span>
+                                            </div>
+                                        </a>
                                     </c:forEach>
-                                    
-                                   
+
+
                                 </div>
                             </div>
                         </div>
@@ -367,32 +367,32 @@
                             <div class="latest-product__slider owl-carousel">
                                 <div class="latest-prdouct__slider__item">
                                     <c:forEach items="${listPP}" var="pp">
-                                    <a href="#" class="latest-product__item">
-                                        <div class="latest-product__item__pic">
-                                            <img src="${pp.image}" alt="">
-                                        </div>
-                                        <div class="latest-product__item__text">
-                                            <h6>${pp.name}</h6>
-                                            <span>${pp.price} $</span>
-                                        </div>
-                                    </a>
+                                        <a href="#" class="latest-product__item">
+                                            <div class="latest-product__item__pic">
+                                                <img src="${pp.image}" alt="">
+                                            </div>
+                                            <div class="latest-product__item__text">
+                                                <h6>${pp.name}</h6>
+                                                <span>${pp.price} $</span>
+                                            </div>
+                                        </a>
                                     </c:forEach>
-                                    
+
                                 </div>
                                 <div class="latest-prdouct__slider__item">
-                                   <c:forEach items="${listAPP}" var="app">
-                                    <a href="#" class="latest-product__item">
-                                        <div class="latest-product__item__pic">
-                                            <img src="${app.image}" alt="">
-                                        </div>
-                                        <div class="latest-product__item__text">
-                                            <h6>${app.name}</h6>
-                                            <span>${app.price} $</span>
-                                        </div>
-                                    </a>
+                                    <c:forEach items="${listAPP}" var="app">
+                                        <a href="#" class="latest-product__item">
+                                            <div class="latest-product__item__pic">
+                                                <img src="${app.image}" alt="">
+                                            </div>
+                                            <div class="latest-product__item__text">
+                                                <h6>${app.name}</h6>
+                                                <span>${app.price} $</span>
+                                            </div>
+                                        </a>
                                     </c:forEach>
-                                    
-                                    
+
+
                                 </div>
                             </div>
                         </div>
@@ -401,65 +401,34 @@
                         <div class="latest-product__text">
                             <h4>Khóa học</h4>
                             <div class="latest-product__slider owl-carousel">
-                                <div class="latest-prdouct__slider__item">
-                                    <a href="#" class="latest-product__item">
-                                        <div class="latest-product__item__pic">
-                                            <img src="img/latest-product/lp-1.jpg" alt="">
-                                        </div>
-                                        <div class="latest-product__item__text">
-                                            <h6>Crab Pool Security</h6>
-                                            <span>$30.00</span>
-                                        </div>
-                                    </a>
-                                    <a href="#" class="latest-product__item">
-                                        <div class="latest-product__item__pic">
-                                            <img src="img/latest-product/lp-2.jpg" alt="">
-                                        </div>
-                                        <div class="latest-product__item__text">
-                                            <h6>Crab Pool Security</h6>
-                                            <span>$30.00</span>
-                                        </div>
-                                    </a>
-                                    <a href="#" class="latest-product__item">
-                                        <div class="latest-product__item__pic">
-                                            <img src="img/latest-product/lp-3.jpg" alt="">
-                                        </div>
-                                        <div class="latest-product__item__text">
-                                            <h6>Crab Pool Security</h6>
-                                            <span>$30.00</span>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="latest-prdouct__slider__item">
-                                    <a href="#" class="latest-product__item">
-                                        <div class="latest-product__item__pic">
-                                            <img src="img/latest-product/lp-1.jpg" alt="">
-                                        </div>
-                                        <div class="latest-product__item__text">
-                                            <h6>Crab Pool Security</h6>
-                                            <span>$30.00</span>
-                                        </div>
-                                    </a>
-                                    <a href="#" class="latest-product__item">
-                                        <div class="latest-product__item__pic">
-                                            <img src="img/latest-product/lp-2.jpg" alt="">
-                                        </div>
-                                        <div class="latest-product__item__text">
-                                            <h6>Crab Pool Security</h6>
-                                            <span>$30.00</span>
-                                        </div>
-                                    </a>
-                                    <a href="#" class="latest-product__item">
-                                        <div class="latest-product__item__pic">
-                                            <img src="img/latest-product/lp-3.jpg" alt="">
-                                        </div>
-                                        <div class="latest-product__item__text">
-                                            <h6>Crab Pool Security</h6>
-                                            <span>$30.00</span>
-                                        </div>
-                                    </a>
-                                </div>
+                            <div class="latest-prdouct__slider__item">
+                                        
+                                 <c:forEach items="${listCO}" var="co">
+                                        <a href="#" class="latest-product__item">
+                                            <div class="latest-product__item__pic">
+                                                <img src="${co.image}" alt="">
+                                            </div>
+                                            <div class="latest-product__item__text">
+                                                <h6>${co.name}</h6>
+                                                <span>${co.price} $</span>
+                                            </div>
+                                        </a>
+                                    </c:forEach>
                             </div>
+                            <div class="latest-prdouct__slider__item">
+                                 <c:forEach items="${listACO}" var="aco">
+                                        <a href="#" class="latest-product__item">
+                                            <div class="latest-product__item__pic">
+                                                <img src="${aco.image}" alt="">
+                                            </div>
+                                            <div class="latest-product__item__text">
+                                                <h6>${aco.name}</h6>
+                                                <span>${aco.price} $</span>
+                                            </div>
+                                        </a>
+                                    </c:forEach>
+                            </div>
+                        </div>
                         </div>
                     </div>
                 </div>

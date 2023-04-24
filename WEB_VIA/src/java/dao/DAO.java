@@ -6,6 +6,7 @@ package dao;
 
 import entity.Account;
 import entity.Category;
+import entity.Course;
 import entity.DBContext;
 import entity.Product;
 import java.sql.Connection;
@@ -23,6 +24,7 @@ public class DAO {
     Connection conn = null;
     PreparedStatement ps = null;
     ResultSet rs = null;
+//----------------------------------account-------------------------------------
 
     public Account login(String user, String pass) {
         String query = "  select * from Account \n"
@@ -77,6 +79,7 @@ public class DAO {
         } catch (Exception e) {
         }
     }
+//----------------------------------product ----------------------------
 
     public List<Product> gettAllProduct() {
         List<Product> list = new ArrayList<>();
@@ -96,6 +99,26 @@ public class DAO {
         } catch (Exception e) {
         }
         return list;
+    }
+
+    public Product getLast() {
+        String query = "select top 1 * from product\n"
+                + "order by id desc";
+        try {
+            conn = new DBContext().getConnection();//mo ket noi voi sql
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                return new Product(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getDouble(4),
+                        rs.getString(5),
+                        rs.getString(6));
+            }
+        } catch (Exception e) {
+        }
+        return null;
     }
 
     public List<Product> getAfterTop3() {
@@ -187,6 +210,27 @@ public class DAO {
         return list;
     }
 
+    public List<Product> getProductByCID(String cid) {
+        List<Product> list = new ArrayList<>();
+        String query = "select * from product\n"
+                + "where cateID = ?";
+        try {
+            conn = new DBContext().getConnection();//mo ket noi voi sql
+            ps = conn.prepareStatement(query);
+            ps.setString(1, cid);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(new Product(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getDouble(4),
+                        rs.getString(5),
+                        rs.getString(6)));
+            }
+        } catch (Exception e) {
+        }
+        return list;
+    }
     public Product getProductByID(String id) {
         String query = "select * from product\n"
                 + "where id = ?";
@@ -207,6 +251,7 @@ public class DAO {
         }
         return null;
     }
+//---------------------------------category----------------------
 
     public List<Category> getAllCategory() {
         List<Category> list = new ArrayList<>();
@@ -224,32 +269,78 @@ public class DAO {
         return list;
     }
 
-    public Product getLast() {
-        String query = "select top 1 * from product\n"
-                + "order by id desc";
+    //------------------------------ course -------------------------
+    public List<Course> gettAllCourse() {
+        List<Course> list = new ArrayList<>();
+        String query = "SELECT * FROM Course";
         try {
-            conn = new DBContext().getConnection();//mo ket noi voi sql
+            conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
             while (rs.next()) {
-                return new Product(rs.getInt(1),
+                list.add(new Course(rs.getInt(1),
                         rs.getString(2),
                         rs.getString(3),
                         rs.getDouble(4),
                         rs.getString(5),
-                        rs.getString(6));
+                        rs.getString(6)));
             }
         } catch (Exception e) {
         }
-        return null;
+        return list;
     }
 
+    public List<Course> getTop3Course() {
+        List<Course> list = new ArrayList<>();
+        String query = "select top 3 * from Course";
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(new Course(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getDouble(4),
+                        rs.getString(5),
+                        rs.getString(6)));
+            }
+        } catch (Exception e) {
+        }
+        return list;
+    }
+
+    public List<Course> getAfterTop3Course() {
+        List<Course> list = new ArrayList<>();
+        String query = "SELECT * FROM Course\n"
+                + "ORDER BY id ASC\n"
+                + " OFFSET 3 ROWS\n"
+                + "  FETCH NEXT 3 ROWS ONLY;";
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(new Course(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getDouble(4),
+                        rs.getString(5),
+                        rs.getString(6)));
+            }
+        } catch (Exception e) {
+        }
+        return list;
+    }
+
+///------------------------------------test-------------------
     public static void main(String[] args) {
         DAO dao = new DAO();
-        List<Product> list = dao.gettAllProduct();
+        List<Product> list = dao.getProductByCID("3");
         List<Category> listC = dao.getAllCategory();
+        List<Course> listcoust = dao.getAfterTop3Course();
 
-        for (Category s : listC) {
+        for (Product s : list) {
             System.out.println(s);
         }
 
