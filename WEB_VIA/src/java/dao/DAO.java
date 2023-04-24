@@ -98,6 +98,30 @@ public class DAO {
         return list;
     }
 
+    public List<Product> getAfterTop3() {
+        List<Product> list = new ArrayList<>();
+        String query = "SELECT *\n"
+                + "FROM product\n"
+                + "ORDER BY price DESC\n"
+                + "OFFSET 3 ROWS\n"
+                + "FETCH NEXT 3 ROWS ONLY;";
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(new Product(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getDouble(4),
+                        rs.getString(5),
+                        rs.getString(6)));
+            }
+        } catch (Exception e) {
+        }
+        return list;
+    }
+
     public List<Product> getTop3() {
         List<Product> list = new ArrayList<>();
         String query = "select top 3 * from product";
@@ -117,7 +141,53 @@ public class DAO {
         }
         return list;
     }
-     public Product getProductByID(String id) {
+
+    public List<Product> getTop3ByPrice() {
+        List<Product> list = new ArrayList<>();
+        String query = "SELECT top 3  * FROM product\n"
+                + "ORDER BY price ASC";
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(new Product(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getDouble(4),
+                        rs.getString(5),
+                        rs.getString(6)));
+            }
+        } catch (Exception e) {
+        }
+        return list;
+    }
+
+    public List<Product> getAfterTop3ByPrice() {
+        List<Product> list = new ArrayList<>();
+        String query = "SELECT *\n"
+                + "FROM product\n"
+                + "ORDER BY price ASC\n"
+                + "OFFSET 3 ROWS\n"
+                + "FETCH NEXT 3 ROWS ONLY;";
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(new Product(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getDouble(4),
+                        rs.getString(5),
+                        rs.getString(6)));
+            }
+        } catch (Exception e) {
+        }
+        return list;
+    }
+
+    public Product getProductByID(String id) {
         String query = "select * from product\n"
                 + "where id = ?";
         try {
@@ -137,6 +207,7 @@ public class DAO {
         }
         return null;
     }
+
     public List<Category> getAllCategory() {
         List<Category> list = new ArrayList<>();
         String query = "select * from Category";
@@ -152,6 +223,7 @@ public class DAO {
         }
         return list;
     }
+
     public Product getLast() {
         String query = "select top 1 * from product\n"
                 + "order by id desc";
@@ -176,7 +248,7 @@ public class DAO {
         DAO dao = new DAO();
         List<Product> list = dao.gettAllProduct();
         List<Category> listC = dao.getAllCategory();
-                
+
         for (Category s : listC) {
             System.out.println(s);
         }

@@ -329,134 +329,77 @@
                             <h4>Sản phẩm mới nhất</h4>
                             <div class="latest-product__slider owl-carousel">
                                 <div class="latest-prdouct__slider__item">
-                                    <a href="#" class="latest-product__item">
+                                    
+                                    <c:forEach items="${listtp}" var="tp">
+                                         <a href="#" class="latest-product__item">
                                         <div class="latest-product__item__pic">
-                                            <img src="img/latest-product/lp-1.jpg" alt="">
+                                            <img src="${tp.image}" alt="">
                                         </div>
                                         <div class="latest-product__item__text">
-                                            <h6>Crab Pool Security</h6>
-                                            <span>$30.00</span>
+                                            <h6>${tp.name}</h6>
+                                            <span>${tp.price} $</span>
                                         </div>
                                     </a>
-                                    <a href="#" class="latest-product__item">
-                                        <div class="latest-product__item__pic">
-                                            <img src="img/latest-product/lp-2.jpg" alt="">
-                                        </div>
-                                        <div class="latest-product__item__text">
-                                            <h6>Crab Pool Security</h6>
-                                            <span>$30.00</span>
-                                        </div>
-                                    </a>
-                                    <a href="#" class="latest-product__item">
-                                        <div class="latest-product__item__pic">
-                                            <img src="img/latest-product/lp-3.jpg" alt="">
-                                        </div>
-                                        <div class="latest-product__item__text">
-                                            <h6>Crab Pool Security</h6>
-                                            <span>$30.00</span>
-                                        </div>
-                                    </a>
+                                    </c:forEach>
+                                   
                                 </div>
                                 <div class="latest-prdouct__slider__item">
-                                    <a href="#" class="latest-product__item">
+                                    <c:forEach items="${listAP}" var="ap">
+                                        <a href="#" class="latest-product__item">
                                         <div class="latest-product__item__pic">
-                                            <img src="img/latest-product/lp-1.jpg" alt="">
+                                            <img src="${ap.image}" alt="">
                                         </div>
                                         <div class="latest-product__item__text">
-                                            <h6>Crab Pool Security</h6>
-                                            <span>$30.00</span>
+                                            <h6>${ap.name}</h6>
+                                            <span>${ap.price} $</span>
                                         </div>
                                     </a>
-                                    <a href="#" class="latest-product__item">
-                                        <div class="latest-product__item__pic">
-                                            <img src="img/latest-product/lp-2.jpg" alt="">
-                                        </div>
-                                        <div class="latest-product__item__text">
-                                            <h6>Crab Pool Security</h6>
-                                            <span>$30.00</span>
-                                        </div>
-                                    </a>
-                                    <a href="#" class="latest-product__item">
-                                        <div class="latest-product__item__pic">
-                                            <img src="img/latest-product/lp-3.jpg" alt="">
-                                        </div>
-                                        <div class="latest-product__item__text">
-                                            <h6>Crab Pool Security</h6>
-                                            <span>$30.00</span>
-                                        </div>
-                                    </a>
+                                    </c:forEach>
+                                    
+                                   
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="latest-product__text">
-                            <h4>Top Rated Products</h4>
+                            <h4>Giá rẻ</h4>
                             <div class="latest-product__slider owl-carousel">
                                 <div class="latest-prdouct__slider__item">
+                                    <c:forEach items="${listPP}" var="pp">
                                     <a href="#" class="latest-product__item">
                                         <div class="latest-product__item__pic">
-                                            <img src="img/latest-product/lp-1.jpg" alt="">
+                                            <img src="${pp.image}" alt="">
                                         </div>
                                         <div class="latest-product__item__text">
-                                            <h6>Crab Pool Security</h6>
-                                            <span>$30.00</span>
+                                            <h6>${pp.name}</h6>
+                                            <span>${pp.price} $</span>
                                         </div>
                                     </a>
-                                    <a href="#" class="latest-product__item">
-                                        <div class="latest-product__item__pic">
-                                            <img src="img/latest-product/lp-2.jpg" alt="">
-                                        </div>
-                                        <div class="latest-product__item__text">
-                                            <h6>Crab Pool Security</h6>
-                                            <span>$30.00</span>
-                                        </div>
-                                    </a>
-                                    <a href="#" class="latest-product__item">
-                                        <div class="latest-product__item__pic">
-                                            <img src="img/latest-product/lp-3.jpg" alt="">
-                                        </div>
-                                        <div class="latest-product__item__text">
-                                            <h6>Crab Pool Security</h6>
-                                            <span>$30.00</span>
-                                        </div>
-                                    </a>
+                                    </c:forEach>
+                                    
                                 </div>
                                 <div class="latest-prdouct__slider__item">
+                                   <c:forEach items="${listAPP}" var="app">
                                     <a href="#" class="latest-product__item">
                                         <div class="latest-product__item__pic">
-                                            <img src="img/latest-product/lp-1.jpg" alt="">
+                                            <img src="${app.image}" alt="">
                                         </div>
                                         <div class="latest-product__item__text">
-                                            <h6>Crab Pool Security</h6>
-                                            <span>$30.00</span>
+                                            <h6>${app.name}</h6>
+                                            <span>${app.price} $</span>
                                         </div>
                                     </a>
-                                    <a href="#" class="latest-product__item">
-                                        <div class="latest-product__item__pic">
-                                            <img src="img/latest-product/lp-2.jpg" alt="">
-                                        </div>
-                                        <div class="latest-product__item__text">
-                                            <h6>Crab Pool Security</h6>
-                                            <span>$30.00</span>
-                                        </div>
-                                    </a>
-                                    <a href="#" class="latest-product__item">
-                                        <div class="latest-product__item__pic">
-                                            <img src="img/latest-product/lp-3.jpg" alt="">
-                                        </div>
-                                        <div class="latest-product__item__text">
-                                            <h6>Crab Pool Security</h6>
-                                            <span>$30.00</span>
-                                        </div>
-                                    </a>
+                                    </c:forEach>
+                                    
+                                    
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="latest-product__text">
-                            <h4>Review Products</h4>
+                            <h4>Khóa học</h4>
                             <div class="latest-product__slider owl-carousel">
                                 <div class="latest-prdouct__slider__item">
                                     <a href="#" class="latest-product__item">
