@@ -19,7 +19,7 @@ import java.util.List;
  *
  * @author trung
  */
-public class HomeServelet extends HttpServlet {
+public class LoadProductServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,18 +32,16 @@ public class HomeServelet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
         response.setContentType("text/html;charset=UTF-8");
+        String id = request.getParameter("pid");
         DAO dao = new DAO();
-        List<Product> list = dao.gettAllProduct();
+        List<Product> list = dao.getTop3();
+        Product p = dao.getProductByID(id);
         List<Category> listC = dao.getAllCategory();
-        Product newp = dao.getLast();
-        
-
-        request.setAttribute("listP", list);
-        request.setAttribute("listC", listC);
-        request.setAttribute("newp", newp);
-        request.getRequestDispatcher("Home.jsp").forward(request, response);
-
+        request.setAttribute("detail", p);
+        request.setAttribute("listCC", listC);
+        request.getRequestDispatcher("Edit.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -59,7 +57,6 @@ public class HomeServelet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-
     }
 
     /**
@@ -73,7 +70,7 @@ public class HomeServelet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-     //   processRequest(request, response);
+        processRequest(request, response);
     }
 
     /**
