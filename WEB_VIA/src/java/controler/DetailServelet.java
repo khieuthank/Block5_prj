@@ -5,26 +5,29 @@
 package controler;
 
 import dao.DAO;
+import entity.Account;
 import entity.Category;
 import entity.Product;
 import java.io.IOException;
+import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import java.util.List;
 
 /**
  *
  * @author trung
  */
-public class CategoryServlet extends HttpServlet {
+public class DetailServelet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
      *
-     * @param request servlet request   
+     * @param request servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
@@ -32,15 +35,19 @@ public class CategoryServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String cateID = request.getParameter("cid");
-        //da lay dc category id ve roi
-        DAO dao = new DAO();
-        List<Product> list = dao.getProductByCID(cateID);
-        List<Category> listC = dao.getAllCategory();
-        Product last = dao.getLast();
+        String id = request.getParameter("pid");
 
-        request.setAttribute("listP", list);
-        request.getRequestDispatcher("Home.jsp").forward(request, response);
+        DAO dao = new DAO();
+        List<Product> list = dao.getTop4ProductByCID(id);
+         List<Category> listC = dao.getAllCategory();
+        Product p = dao.getProductByID(id);
+        request.setAttribute("DetailServelet", p);
+        
+        request.setAttribute("list", list);
+        request.setAttribute("listC", listC);
+       
+
+        request.getRequestDispatcher("Shop_Detail.jsp").forward(request, response);
 
     }
 

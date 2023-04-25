@@ -28,6 +28,10 @@
         <servlet-name>LoadProductServlet</servlet-name>
         <servlet-class>controler.LoadProductServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DetailServelet</servlet-name>
+        <servlet-class>controler.DetailServelet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet</url-pattern>
@@ -55,6 +59,10 @@
     <servlet-mapping>
         <servlet-name>LoadProductServlet</servlet-name>
         <url-pattern>/LoadProductServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DetailServelet</servlet-name>
+        <url-pattern>/DetailServelet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

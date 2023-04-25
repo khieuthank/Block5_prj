@@ -55,7 +55,7 @@ public class HomeServelet extends HttpServlet {
         request.setAttribute("listCO", listCo);
         request.setAttribute("listACO", listaCo);
 
-        request.getRequestDispatcher("Home.jsp").forward(request, response);
+        request.getRequestDispatcher("./Home.jsp").forward(request, response);
 
     }
 

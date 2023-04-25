@@ -5,8 +5,7 @@
 package controler;
 
 import dao.DAO;
-import entity.Category;
-import entity.Product;
+import entity.Student;
 import java.io.IOException;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -18,29 +17,20 @@ import java.util.List;
  *
  * @author trung
  */
-public class CategoryServlet extends HttpServlet {
+public class StudentServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
      *
-     * @param request servlet request   
+     * @param request servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        String cateID = request.getParameter("cid");
-        //da lay dc category id ve roi
-        DAO dao = new DAO();
-        List<Product> list = dao.getProductByCID(cateID);
-        List<Category> listC = dao.getAllCategory();
-        Product last = dao.getLast();
-
-        request.setAttribute("listP", list);
-        request.getRequestDispatcher("Home.jsp").forward(request, response);
+        
 
     }
 
@@ -56,7 +46,12 @@ public class CategoryServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        response.setContentType("text/html;charset=UTF-8");
+        DAO dao = new DAO();
+        List<Student> list = dao.getAllStudent();
+        
+        request.setAttribute("lists", list);
+        request.getRequestDispatcher("Home.jsp").forward(request, response);
     }
 
     /**

@@ -42,7 +42,8 @@ public class LoginServlet extends HttpServlet {
             HttpSession session = request.getSession();
             session.setAttribute("username", a);
             //session.setMaxInactiveInterval(1000);
-            response.sendRedirect("Home.jsp");
+            response.sendRedirect("HomeServelet");
+            
         }
     }
     

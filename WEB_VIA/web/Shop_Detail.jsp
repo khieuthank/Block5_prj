@@ -1,14 +1,13 @@
 <%-- 
-    Document   : Home
-    Created on : 23-04-2023, 09:06:57
+    Document   : Shop
+    Created on : 25-04-2023, 04:36:09
     Author     : trung
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
-
 <html lang="zxx">
 
     <head>
@@ -17,7 +16,7 @@
         <meta name="keywords" content="Ogani, unica, creative, html">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Home Via FB</title>
+        <title>Shop Detail</title>
 
         <!-- Google Font -->
         <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
@@ -43,7 +42,7 @@
         <div class="humberger__menu__overlay"></div>
         <div class="humberger__menu__wrapper">
             <div class="humberger__menu__logo">
-                <a href="HomeServelet"><img src="img/logo.jpg" alt=""></a>
+                <a href="Home.jsp"><img src="img/logo.jpg" alt=""></a>
             </div>
             <div class="humberger__menu__cart">
                 <ul>
@@ -72,10 +71,10 @@
             <nav class="humberger__menu__nav mobile-menu">
                 <ul>
                     <li class="active"><a href="HomeServelet">Home</a></li>
-                    <li><a href="DetailServelet">Shop</a></li>
+                    <li><a href="./Shop.jsp">Shop</a></li>
                     <li><a href="#">Danh Mục</a>
                         <ul class="header__menu__dropdown">
-                            <li><a href="DetailServelet">Chi tiết sản phẩm</a></li>
+                            <li><a href="./shop-details.html">Chi tiết sản phẩm</a></li>
                             <li><a href="./shoping-cart.html">Giỏ hàng</a></li>
                             <li><a href="./checkout.html">Thanh Toán</a></li>
                             <li><a href="./blog-details.html">Blog Details</a></li>
@@ -147,17 +146,17 @@
                 <div class="row">
                     <div class="col-lg-3">
                         <div class="header__logo">
-                            <a href="HomeServelet"><img src="img/logo.jpg" alt=""></a>
+                            <a href="Home.jsp"><img src="img/logo.jpg" alt=""></a>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <nav class="header__menu">
                             <ul>
                                 <li class="active"><a href="HomeServelet">Home</a></li>
-                                <li><a href="DetailServelet">Shop</a></li>
+                                <li><a href="./shop-grid.html">Shop</a></li>
                                 <li><a href="#">Danh Mục</a>
                                     <ul class="header__menu__dropdown">
-                                        <li><a href="DetailServelet">Chi tiết sản phẩm</a></li>
+                                        <li><a href="./shop-details.html">Chi tiết sản phẩm</a></li>
                                         <li><a href="./shoping-cart.html">Giỏ hàng</a></li>
                                         <li><a href="./checkout.html">Thanh Toán</a></li>
                                         <li><a href="./blog-details.html">Blog Details</a></li>
@@ -186,7 +185,7 @@
         <!-- Header Section End -->
 
         <!-- Hero Section Begin -->
-        <section class="hero">
+        <section class="hero hero-normal">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-3">
@@ -200,7 +199,6 @@
                                     <li><a href="">${c.cname}</a></li>
                                     </c:forEach>
                             </ul>
-
                         </div>
                     </div>
                     <div class="col-lg-9">
@@ -211,8 +209,8 @@
                                         All Categories
                                         <span class="arrow_carrot-down"></span>
                                     </div>
-                                    <input type="text" placeholder="Nhập loại bạn muốn tìm?">
-                                    <button type="submit" class="site-btn">Tìm Kiếm</button>
+                                    <input type="text" placeholder="What do yo u need?">
+                                    <button type="submit" class="site-btn">SEARCH</button>
                                 </form>
                             </div>
                             <div class="hero__search__phone">
@@ -225,277 +223,200 @@
                                 </div>
                             </div>
                         </div>
-                        <!--                        <div class="hero__item set-bg" data-setbg="img/hero/banner.jpg">
-                                                    <div class="hero__text">    tạo bảng thông báo 
-                                                        <span>FRUIT FRESH</span>
-                                                        <h2>Vegetable <br />100% Organic</h2>
-                                                        <p>Free Pickup and Delivery Available</p>
-                                                        <a href="#" class="primary-btn">SHOP NOW</a>
-                                                    </div>
-                                                </div>-->
                     </div>
                 </div>
             </div>
         </section>
         <!-- Hero Section End -->
 
-        <!-- Categories Section Begin -->
-        <section class="categories">
+        <!-- Breadcrumb Section Begin -->
+        <section class="breadcrumb-section set-bg" data-setbg="img/breadcrumb.jpg">
             <div class="container">
                 <div class="row">
-                    <div class="categories__slider owl-carousel">
-                        <c:forEach items="${listC}" var="c">
-                            <div class="col-lg-3">
-                                <div class="categories__item set-bg" data-setbg="img/fb.jpg">
-                                    <h5><a href="#">${c.cname}</a></h5>
-                                </div>
+                    <div class="col-lg-12 text-center">
+                        <div class="breadcrumb__text">
+                            <h2>${DetailServelet.name}</h2>
+                            <div class="breadcrumb__option">
+                                <a href="HomeServlet">Home</a>
+                                <a href="./index.html">Shop_Detail</a>
+                                <span>${DetailServelet.name}</span>
                             </div>
-                        </c:forEach>
-
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- Categories Section End -->
+        <!-- Breadcrumb Section End -->
 
-        <!-- Featured Section Begin -->
-        <section class="featured spad">
+        <!-- Product Details Section Begin -->
+        <section class="product-details spad">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-12">
-                        <div class="section-title">
-                            <h2>Featured Product</h2>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="product__details__pic">
+                            <div class="product__details__pic__item">
+                                <img class="product__details__pic__item--large"
+                                     src="${DetailServelet.image}" alt="">
+                            </div>
+
                         </div>
-                        <div class="featured__controls">
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="product__details__text">
+                            <h3>${DetailServelet.name}</h3>
+                            <div class="product__details__rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-half-o"></i>
+                                <span>(18 reviews)</span>
+                            </div>
+                            <div class="product__details__price">${DetailServelet.price}</div>
+                            <p>${DetailServelet.description}</p>
+                            <div class="product__details__quantity">
+                                <div class="quantity">
+                                    <div class="pro-qty">
+                                        <input type="text" value="1">
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#" class="primary-btn">ADD TO CARD</a>
+                            <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a>
                             <ul>
-                                <li class="active" data-filter="*">All</li>
-                                    <c:forEach items="${listC}" var="c">
-                                    <li class="active" data-filter="*">${c.cname}</li>
-                                    </c:forEach>
+                                <li><b>Tình trạng</b> <span>Có Sẵn</span></li>
+                                <li><b>Shipping</b> <span>01 day shipping. <samp>Free pickup today</samp></span></li>
+
+                                <li><b>Share on</b>
+                                    <div class="share">
+                                        <a href="#"><i class="fa fa-facebook"></i></a>
+                                        <a href="#"><i class="fa fa-twitter"></i></a>
+                                        <a href="#"><i class="fa fa-instagram"></i></a>
+                                        <a href="#"><i class="fa fa-pinterest"></i></a>
+                                    </div>
+                                </li>
                             </ul>
                         </div>
                     </div>
+                    <!--                <div class="col-lg-12">
+                                        <div class="product__details__tab">
+                                            <ul class="nav nav-tabs" role="tablist">
+                                                <li class="nav-item">
+                                                    <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab"
+                                                        aria-selected="true">Description</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab"
+                                                        aria-selected="false">Information</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab"
+                                                        aria-selected="false">Reviews <span>(1)</span></a>
+                                                </li>
+                                            </ul>
+                                            <div class="tab-content">
+                                                <div class="tab-pane active" id="tabs-1" role="tabpanel">
+                                                    <div class="product__details__tab__desc">
+                                                        <h6>Products Infomation</h6>
+                                                        <p>Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.
+                                                            Pellentesque in ipsum id orci porta dapibus. Proin eget tortor risus. Vivamus
+                                                            suscipit tortor eget felis porttitor volutpat. Vestibulum ac diam sit amet quam
+                                                            vehicula elementum sed sit amet dui. Donec rutrum congue leo eget malesuada.
+                                                            Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur arcu erat,
+                                                            accumsan id imperdiet et, porttitor at sem. Praesent sapien massa, convallis a
+                                                            pellentesque nec, egestas non nisi. Vestibulum ac diam sit amet quam vehicula
+                                                            elementum sed sit amet dui. Vestibulum ante ipsum primis in faucibus orci luctus
+                                                            et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam
+                                                            vel, ullamcorper sit amet ligula. Proin eget tortor risus.</p>
+                                                            <p>Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Lorem
+                                                            ipsum dolor sit amet, consectetur adipiscing elit. Mauris blandit aliquet
+                                                            elit, eget tincidunt nibh pulvinar a. Cras ultricies ligula sed magna dictum
+                                                            porta. Cras ultricies ligula sed magna dictum porta. Sed porttitor lectus
+                                                            nibh. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.
+                                                            Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Sed
+                                                            porttitor lectus nibh. Vestibulum ac diam sit amet quam vehicula elementum
+                                                            sed sit amet dui. Proin eget tortor risus.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane" id="tabs-2" role="tabpanel">
+                                                    <div class="product__details__tab__desc">
+                                                        <h6>Products Infomation</h6>
+                                                        <p>Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.
+                                                            Pellentesque in ipsum id orci porta dapibus. Proin eget tortor risus.
+                                                            Vivamus suscipit tortor eget felis porttitor volutpat. Vestibulum ac diam
+                                                            sit amet quam vehicula elementum sed sit amet dui. Donec rutrum congue leo
+                                                            eget malesuada. Vivamus suscipit tortor eget felis porttitor volutpat.
+                                                            Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Praesent
+                                                            sapien massa, convallis a pellentesque nec, egestas non nisi. Vestibulum ac
+                                                            diam sit amet quam vehicula elementum sed sit amet dui. Vestibulum ante
+                                                            ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+                                                            Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.
+                                                            Proin eget tortor risus.</p>
+                                                        <p>Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Lorem
+                                                            ipsum dolor sit amet, consectetur adipiscing elit. Mauris blandit aliquet
+                                                            elit, eget tincidunt nibh pulvinar a. Cras ultricies ligula sed magna dictum
+                                                            porta. Cras ultricies ligula sed magna dictum porta. Sed porttitor lectus
+                                                            nibh. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane" id="tabs-3" role="tabpanel">
+                                                    <div class="product__details__tab__desc">
+                                                        <h6>Products Infomation</h6>
+                                                        <p>Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.
+                                                            Pellentesque in ipsum id orci porta dapibus. Proin eget tortor risus.
+                                                            Vivamus suscipit tortor eget felis porttitor volutpat. Vestibulum ac diam
+                                                            sit amet quam vehicula elementum sed sit amet dui. Donec rutrum congue leo
+                                                            eget malesuada. Vivamus suscipit tortor eget felis porttitor volutpat.
+                                                            Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Praesent
+                                                            sapien massa, convallis a pellentesque nec, egestas non nisi. Vestibulum ac
+                                                            diam sit amet quam vehicula elementum sed sit amet dui. Vestibulum ante
+                                                            ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+                                                            Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.
+                                                            Proin eget tortor risus.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>-->
                 </div>
-
-                <div class="row featured__filter">
-                    <c:forEach items="${listP}" var="p">
-                        <div class="col-lg-3 col-md-4 col-sm-6 mix vegetables fastfood">
-                            <div class="featured__item">
-                                <div class="featured__item__pic set-bg" data-setbg="${p.image}">
-                                    <ul class="featured__item__pic__hover">
-                                        <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                        <li><a href="DetailServelet?pid=${p.id}"><i class="fa fa-retweet"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="featured__item__text">
-                                    <h6><a href="#"></a>${p.name}</h6>
-                                    <h5>${p.price} $</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </c:forEach>   
-                </div>
-            </div>
         </section>
-        <!-- Featured Section End -->
+        <!-- Product Details Section End -->
 
-        <!-- Banner Begin -->
-        <div class="banner">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                        <div class="banner__pic">
-                            <img src="${newp.image}" alt="">
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                        <div class="banner__pic">
-                            <h3>${newp.name}</h3>
-                            <h4>${newp.description}</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Banner End -->
-
-        <!-- Latest Product Section Begin -->
-        <section class="latest-product spad">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="latest-product__text">
-                            <h4>Sản phẩm mới nhất</h4>
-                            <div class="latest-product__slider owl-carousel">
-                                <div class="latest-prdouct__slider__item">
-
-                                    <c:forEach items="${listtp}" var="tp">
-                                        <a href="#" class="latest-product__item">
-                                            <div class="latest-product__item__pic">
-                                                <img src="${tp.image}" alt="">
-                                            </div>
-                                            <div class="latest-product__item__text">
-                                                <h6>${tp.name}</h6>
-                                                <span>${tp.price} $</span>
-                                            </div>
-                                        </a>
-                                    </c:forEach>
-
-                                </div>
-                                <div class="latest-prdouct__slider__item">
-                                    <c:forEach items="${listAP}" var="ap">
-                                        <a href="#" class="latest-product__item">
-                                            <div class="latest-product__item__pic">
-                                                <img src="${ap.image}" alt="">
-                                            </div>
-                                            <div class="latest-product__item__text">
-                                                <h6>${ap.name}</h6>
-                                                <span>${ap.price} $</span>
-                                            </div>
-                                        </a>
-                                    </c:forEach>
-
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="latest-product__text">
-                            <h4>Giá rẻ</h4>
-                            <div class="latest-product__slider owl-carousel">
-                                <div class="latest-prdouct__slider__item">
-                                    <c:forEach items="${listPP}" var="pp">
-                                        <a href="#" class="latest-product__item">
-                                            <div class="latest-product__item__pic">
-                                                <img src="${pp.image}" alt="">
-                                            </div>
-                                            <div class="latest-product__item__text">
-                                                <h6>${pp.name}</h6>
-                                                <span>${pp.price} $</span>
-                                            </div>
-                                        </a>
-                                    </c:forEach>
-
-                                </div>
-                                <div class="latest-prdouct__slider__item">
-                                    <c:forEach items="${listAPP}" var="app">
-                                        <a href="#" class="latest-product__item">
-                                            <div class="latest-product__item__pic">
-                                                <img src="${app.image}" alt="">
-                                            </div>
-                                            <div class="latest-product__item__text">
-                                                <h6>${app.name}</h6>
-                                                <span>${app.price} $</span>
-                                            </div>
-                                        </a>
-                                    </c:forEach>
-
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="latest-product__text">
-                            <h4>Khóa học</h4>
-                            <div class="latest-product__slider owl-carousel">
-                            <div class="latest-prdouct__slider__item">
-                                        
-                                 <c:forEach items="${listCO}" var="co">
-                                        <a href="#" class="latest-product__item">
-                                            <div class="latest-product__item__pic">
-                                                <img src="${co.image}" alt="">
-                                            </div>
-                                            <div class="latest-product__item__text">
-                                                <h6>${co.name}</h6>
-                                                <span>${co.price} $</span>
-                                            </div>
-                                        </a>
-                                    </c:forEach>
-                            </div>
-                            <div class="latest-prdouct__slider__item">
-                                 <c:forEach items="${listACO}" var="aco">
-                                        <a href="#" class="latest-product__item">
-                                            <div class="latest-product__item__pic">
-                                                <img src="${aco.image}" alt="">
-                                            </div>
-                                            <div class="latest-product__item__text">
-                                                <h6>${aco.name}</h6>
-                                                <span>${aco.price} $</span>
-                                            </div>
-                                        </a>
-                                    </c:forEach>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Latest Product Section End -->
-
-        <!-- Blog Section Begin -->
-        <section class="from-blog spad">
+        <!-- Related Product Section Begin -->
+        <section class="related-product">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="section-title from-blog__title">
-                            <h2>khóa học</h2>
+                        <div class="section-title related__product__title">
+                            <h2>Sản Phẩm Liên Quan</h2>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-4 col-md-4 col-sm-6">
-                        <div class="blog__item">
-                            <div class="blog__item__pic">
-                                <img src="img/blog/blog-1.jpg" alt="">
-                            </div>
-                            <div class="blog__item__text">
-                                <ul>
-                                    <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
-                                    <li><i class="fa fa-comment-o"></i> 5</li>
-                                </ul>
-                                <h5><a href="#">Cooking tips make cooking simple</a></h5>
-                                <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-6">
-                        <div class="blog__item">
-                            <div class="blog__item__pic">
-                                <img src="img/blog/blog-2.jpg" alt="">
-                            </div>
-                            <div class="blog__item__text">
-                                <ul>
-                                    <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
-                                    <li><i class="fa fa-comment-o"></i> 5</li>
-                                </ul>
-                                <h5><a href="#">6 ways to prepare breakfast for 30</a></h5>
-                                <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
+                    <c:forEach items="${list}" var="list">
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <div class="product__item">
+                                <div class="product__item__pic set-bg" data-setbg="${list.image}">
+                                    <ul class="product__item__pic__hover">
+                                        <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product__item__text">
+                                    <h6><a href="#">${list.name}</a></h6>
+                                    <h5>${list.price} $</h5>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-6">
-                        <div class="blog__item">
-                            <div class="blog__item__pic">
-                                <img src="img/blog/blog-3.jpg" alt="">
-                            </div>
-                            <div class="blog__item__text">
-                                <ul>
-                                    <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
-                                    <li><i class="fa fa-comment-o"></i> 5</li>
-                                </ul>
-                                <h5><a href="#">Visit the clean farm in the US</a></h5>
-                                <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
-                            </div>
-                        </div>
-                    </div>
+                    </c:forEach>
+
+
                 </div>
             </div>
         </section>
-        <!-- Blog Section End -->
+        <!-- Related Product Section End -->
 
         <!-- Footer Section Begin -->
         <footer class="footer spad">
@@ -504,7 +425,7 @@
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="footer__about">
                             <div class="footer__about__jsp">
-                                <a href="HomeServelet"><img src="img/logo.jpg" alt=""></a>
+                                <a href="Home.jsp"><img src="img/logo.jpg" alt=""></a>
                             </div>
                             <ul>
                                 <li>Address: Thái Bình - Việt Nam</li>
@@ -528,7 +449,7 @@
                                 <li><a href="#">Who We Are</a></li>
                                 <li><a href="#">Our Services</a></li>
                                 <li><a href="#">Projects</a></li>
-                                <li><a href="Contact.jsp">Contact</a></li>
+                                <li><a href="#">Contact</a></li>
                                 <li><a href="#">Innovation</a></li>
                                 <li><a href="#">Testimonials</a></li>
                             </ul>
@@ -574,7 +495,6 @@
         <script src="js/mixitup.min.js"></script>
         <script src="js/owl.carousel.min.js"></script>
         <script src="js/main.js"></script>
-
 
 
     </body>
