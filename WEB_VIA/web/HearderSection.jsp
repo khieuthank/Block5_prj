@@ -132,10 +132,10 @@
                                 <li><a href="DetailServelet">Chi tiết sản phẩm</a></li>
                                 <li><a href="./shoping-cart.html">Giỏ hàng</a></li>
                                 <li><a href="./checkout.html">Thanh Toán</a></li>
-                                <li><a href="./blog-details.html">Blog Details</a></li>
+                                <li><a href="CategoryServlet">Danh sách</a></li>
                             </ul>
                         </li>
-                        <li><a href="./blog.html">Khóa học</a></li>
+                       
                         <li><a href="Contact.jsp">Liên Hệ</a></li>
                     </ul>
                 </nav>

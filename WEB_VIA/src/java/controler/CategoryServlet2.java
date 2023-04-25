@@ -8,17 +8,17 @@ import dao.DAO;
 import entity.Category;
 import entity.Product;
 import java.io.IOException;
-import java.util.List;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.util.List;
 
 /**
  *
  * @author trung
  */
-public class CategoryServlet extends HttpServlet {
+public class CategoryServlet2 extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,19 +32,13 @@ public class CategoryServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-    
-        //da lay dc category id ve roi
+        String cateID = request.getParameter("cid");
         DAO dao = new DAO();
-        List<Product> list = dao.gettAllProduct();
-        
+        List<Product> list = dao.getProductByCID(cateID);
         List<Category> listC = dao.getAllCategory();
-        Product last = dao.getLast();
         List<Product> listtP = dao.getTop3();
-        
-       
 
         request.setAttribute("listP", list);
-      //  request.setAttribute("listP", listp);
         request.setAttribute("listC", listC);
         request.setAttribute("listtp", listtP);
         request.getRequestDispatcher("Category.jsp").forward(request, response);

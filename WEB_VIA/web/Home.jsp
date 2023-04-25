@@ -47,7 +47,7 @@
                                 </div>
                                 <ul>
                                 <c:forEach items="${listC}" var="c">
-                                    <li><a href="">${c.cname}</a></li>
+                                    <li><a href="CategoryServlet?cid=${c.cid}">${c.cname}</a></li>
                                     </c:forEach>
                             </ul>
 

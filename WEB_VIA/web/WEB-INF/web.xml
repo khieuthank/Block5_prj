@@ -21,16 +21,20 @@
         <servlet-class>controler.ContactServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>CategoryServlet</servlet-name>
-        <servlet-class>controler.CategoryServlet</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>LoadProductServlet</servlet-name>
         <servlet-class>controler.LoadProductServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>DetailServelet</servlet-name>
         <servlet-class>controler.DetailServelet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CategoryServlet</servlet-name>
+        <servlet-class>controler.CategoryServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CategoryServlet2</servlet-name>
+        <servlet-class>controler.CategoryServlet2</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
@@ -53,16 +57,20 @@
         <url-pattern>/ContactServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>CategoryServlet</servlet-name>
-        <url-pattern>/CategoryServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
         <servlet-name>LoadProductServlet</servlet-name>
         <url-pattern>/LoadProductServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>DetailServelet</servlet-name>
         <url-pattern>/DetailServelet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CategoryServlet</servlet-name>
+        <url-pattern>/CategoryServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CategoryServlet2</servlet-name>
+        <url-pattern>/CategoryServlet2</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
