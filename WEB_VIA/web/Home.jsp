@@ -47,7 +47,7 @@
                                 </div>
                                 <ul>
                                 <c:forEach items="${listC}" var="c">
-                                    <li><a href="CategoryServlet?cid=${c.cid}">${c.cname}</a></li>
+                                    <li><a href="CategoryServlet2?cid=${c.cid}">${c.cname}</a></li>
                                     </c:forEach>
                             </ul>
 
@@ -96,7 +96,7 @@
                         <c:forEach items="${listC}" var="c">
                             <div class="col-lg-3">
                                 <div class="categories__item set-bg" data-setbg="img/fb.jpg">
-                                    <h5><a href="#">${c.cname}</a></h5>
+                                    <h5><a href="CategoryServlet2?cid=${c.cid}">${c.cname}</a></h5>
                                 </div>
                             </div>
                         </c:forEach>
@@ -119,7 +119,7 @@
                             <ul>
                                 <li class="active" data-filter="*">All</li>
                                     <c:forEach items="${listC}" var="c">
-                                    <li class="active" data-filter="*">${c.cname}</li>
+                                    <li><a href="CategoryServlet2?cid=${c.cid}">${c.cname}</a></li>
                                     </c:forEach>
                             </ul>
                         </div>
