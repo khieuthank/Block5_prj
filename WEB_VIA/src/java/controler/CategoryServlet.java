@@ -40,6 +40,7 @@ public class CategoryServlet extends HttpServlet {
         Product last = dao.getLast();
 
         request.setAttribute("listP", list);
+       
         request.getRequestDispatcher("Home.jsp").forward(request, response);
 
     }

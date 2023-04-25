@@ -38,12 +38,14 @@ public class DetailServelet extends HttpServlet {
         String id = request.getParameter("pid");
 
         DAO dao = new DAO();
-        List<Product> list = dao.getTop4ProductByCID(id);
+        List<Product> listP = dao.getTop4ProductByCID(id);
          List<Category> listC = dao.getAllCategory();
         Product p = dao.getProductByID(id);
-        request.setAttribute("DetailServelet", p);
         
-        request.setAttribute("list", list);
+        
+        
+        request.setAttribute("DetailServelet", p);       
+        request.setAttribute("listP", listP);
         request.setAttribute("listC", listC);
        
 

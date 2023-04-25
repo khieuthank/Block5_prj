@@ -30,13 +30,14 @@ public class LogoutServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-       response.setContentType("text/html;charset=UTF-8");
-        request.setCharacterEncoding("UTF-8");
+       
+        
         PrintWriter out = response.getWriter();
-
         HttpSession session = request.getSession();
-        session.removeAttribute("username");
-        response.sendRedirect("Home.jsp");
+            session.removeAttribute("username");
+        response.sendRedirect("HomeServelet");
+        //request.getRequestDispatcher("HomeServlet").forward(request, response);
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
