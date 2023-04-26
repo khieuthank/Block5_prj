@@ -44,17 +44,17 @@
     <nav class="humberger__menu__nav mobile-menu">
         <ul>
             <li class="active"><a href="HomeServelet">Home</a></li>
-            <li><a href="DetailServelet">Shop</a></li>
+            <li><a href="CategoryServlet">Shop</a></li>
             <li><a href="#">Danh Mục</a>
                 <ul class="header__menu__dropdown">
                     <li><a href="DetailServelet">Chi tiết sản phẩm</a></li>
                     <li><a href="./shoping-cart.html">Giỏ hàng</a></li>
                     <li><a href="./checkout.html">Thanh Toán</a></li>
-                    <li><a href="./blog-details.html">Blog Details</a></li>
+                    <li><a href="CategoryServlet">Danh sách</a></li>
                 </ul>
             </li>
-            <li><a href="./blog.html">Blog</a></li>
-            <li><a href="Contact.jsp">Contact</a></li>
+            
+            <li><a href="Contact.jsp">Liên Hệ</a></li>
         </ul>
     </nav>
     <div id="mobile-menu-wrap"></div>
@@ -126,7 +126,7 @@
                 <nav class="header__menu">
                     <ul>
                         <li class="active"><a href="HomeServelet">Home</a></li>
-                        <li><a href="DetailServelet">Shop</a></li>
+                        <li><a href="CategoryServlet">Shop</a></li>
                         <li><a href="#">Danh Mục</a>
                             <ul class="header__menu__dropdown">
                                 <li><a href="DetailServelet">Chi tiết sản phẩm</a></li>
@@ -135,7 +135,7 @@
                                 <li><a href="CategoryServlet">Danh sách</a></li>
                             </ul>
                         </li>
-                       
+
                         <li><a href="Contact.jsp">Liên Hệ</a></li>
                     </ul>
                 </nav>

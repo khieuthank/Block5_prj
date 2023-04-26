@@ -56,13 +56,13 @@
                     <div class="col-lg-9">
                         <div class="hero__search">
                             <div class="hero__search__form">
-                                <form action="#">
+                                <form action="SeachServlet" method="post">
                                     <div class="hero__search__categories">
                                         All Categories
                                         <span class="arrow_carrot-down"></span>
                                     </div>
-                                    <input type="text" placeholder="Nhập loại bạn muốn tìm?">
-                                    <button type="submit" class="site-btn">Tìm Kiếm</button>
+                                    <input value="" type="text" placeholder="What do yo u need?" name="seach">
+                                    <button type="submit" class="site-btn">SEARCH</button>
                                 </form>
                             </div>
                             <div class="hero__search__phone">
@@ -285,7 +285,7 @@
         </section>
         <!-- Latest Product Section End -->
 
-        <!-- Blog Section Begin -->
+<!--         Blog Section Begin 
         <section class="from-blog spad">
             <div class="container">
                 <div class="row">
@@ -344,7 +344,7 @@
                 </div>
             </div>
         </section>
-        <!-- Blog Section End -->
+         Blog Section End -->
 
         <jsp:include page="Footer.jsp"></jsp:include>
 

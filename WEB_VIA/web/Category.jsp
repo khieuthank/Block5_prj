@@ -56,12 +56,13 @@
                     <div class="col-lg-9">
                         <div class="hero__search">
                             <div class="hero__search__form">
-                                <form action="#">
+      <%-- seach --------------------------------------------%>
+                                <form action="SeachServlet" method="post">
                                     <div class="hero__search__categories">
                                         All Categories
                                         <span class="arrow_carrot-down"></span>
                                     </div>
-                                    <input type="text" placeholder="What do yo u need?">
+                                    <input value="${VarSeach}" type="text" placeholder="What do yo u need?" name="seach">
                                     <button type="submit" class="site-btn">SEARCH</button>
                                 </form>
                             </div>
@@ -106,8 +107,9 @@
                     <div class="col-lg-4 col-md-5">
                         <div class="blog__sidebar">
                             <div class="blog__sidebar__search">
-                                <form action="#">
-                                    <input type="text" placeholder="Search...">
+<!--             seach   ---------------------------    -->
+                                <form action="SeachServlet" method="post">
+                                    <input  value="${VarSeach}" type="text" placeholder="What do yo u need?" name="seach">
                                     <button type="submit"><span class="icon_search"></span></button>
                                 </form>
                             </div>
