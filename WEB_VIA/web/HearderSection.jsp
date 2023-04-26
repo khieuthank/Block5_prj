@@ -130,7 +130,7 @@
                         <li><a href="#">Danh Mục</a>
                             <ul class="header__menu__dropdown">
                                 <li><a href="DetailServelet">Chi tiết sản phẩm</a></li>
-                                <li><a href="./shoping-cart.html">Giỏ hàng</a></li>
+                                <li><a href="AddCartServlet">Giỏ hàng</a></li>
                                 <li><a href="./checkout.html">Thanh Toán</a></li>
                                 <li><a href="CategoryServlet">Danh sách</a></li>
                             </ul>

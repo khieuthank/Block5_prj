@@ -36,14 +36,16 @@ public class AddCartServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
 
         String id = request.getParameter("pid");
+        String mess ="";
 
         DAO dao = new DAO();
+        
         Product p = dao.getProductByID(id);
         List<Category> listC = dao.getAllCategory();
 
         request.setAttribute("AddCart", p);
-
-        request.setAttribute("listC", listC);
+        request.setAttribute("listC", listC);      
+        request.setAttribute("mess", mess);
 
         request.getRequestDispatcher("Shop-Cart.jsp").forward(request, response);
 

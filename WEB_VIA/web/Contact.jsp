@@ -44,17 +44,7 @@
                                     <span>All departments</span>
                                 </div>
                                 <ul>
-                                    <li><a href="#">Fresh Meat</a></li>
-                                    <li><a href="#">Vegetables</a></li>
-                                    <li><a href="#">Fruit & Nut Gifts</a></li>
-                                    <li><a href="#">Fresh Berries</a></li>
-                                    <li><a href="#">Ocean Foods</a></li>
-                                    <li><a href="#">Butter & Eggs</a></li>
-                                    <li><a href="#">Fastfood</a></li>
-                                    <li><a href="#">Fresh Onion</a></li>
-                                    <li><a href="#">Papayaya & Crisps</a></li>
-                                    <li><a href="#">Oatmeal</a></li>
-                                    <li><a href="#">Fresh Bananas</a></li>
+                                    
                                 </ul>
                             </div>
                         </div>
@@ -75,7 +65,7 @@
                                         <i class="fa fa-phone"></i>
                                     </div>
                                     <div class="hero__search__phone__text">
-                                        <h5>+65 11.188.888</h5>
+                                        <h5>0862497002</h5>
                                         <span>support 24/7 time</span>
                                     </div>
                                 </div>
@@ -94,7 +84,7 @@
                             <div class="breadcrumb__text">
                                 <h2>Contact Us</h2>
                                 <div class="breadcrumb__option">
-                                    <a href="Home.jsp">Home</a>
+                                    <a href="HomeServlet">Home</a>
                                     <span>Contact Us</span>
                                 </div>
                             </div>
@@ -143,9 +133,7 @@
 
             <!-- Map Begin -->
             <div class="map">
-                <iframe
-                    src="https://www.google.com/maps/place/Tp.+Th%C3%A1i+B%C3%ACnh,+Th%C3%A1i+B%C3%ACnh,+Vi%E1%BB%87t+Nam/@20.4377266,106.1318852,10.89z/data=!4m6!3m5!1s0x3135e4d2252e67df:0xb67aaccf0a25c439!8m2!3d20.4463471!4d106.3365828!16s%2Fm%2F0cz9z7c"
-                    height="500" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119625.43270125722!2d106.2622494747195!3d20.453082748973937!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135e4d2252e67df%3A0xb67aaccf0a25c439!2zVHAuIFRow6FpIELDrG5oLCBUaMOhaSBCw6xuaCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1682486097552!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 <div class="map-inside">
                     <i class="icon_pin"></i>
                     <div class="inside-widget">
