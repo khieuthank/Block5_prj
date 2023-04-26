@@ -40,6 +40,10 @@
         <servlet-name>SeachServlet</servlet-name>
         <servlet-class>controler.SeachServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ManageServlet</servlet-name>
+        <servlet-class>controler.ManageServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet</url-pattern>
@@ -79,6 +83,10 @@
     <servlet-mapping>
         <servlet-name>SeachServlet</servlet-name>
         <url-pattern>/SeachServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ManageServlet</servlet-name>
+        <url-pattern>/ManageServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

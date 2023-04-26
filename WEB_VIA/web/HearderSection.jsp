@@ -53,7 +53,7 @@
                     <li><a href="CategoryServlet">Danh sách</a></li>
                 </ul>
             </li>
-            
+
             <li><a href="Contact.jsp">Liên Hệ</a></li>
         </ul>
     </nav>
@@ -137,6 +137,17 @@
                         </li>
 
                         <li><a href="Contact.jsp">Liên Hệ</a></li>
+                            <c:if test="${sessionScope.username.isSell == 1}">
+                            <li><a href="ManageServlet">User</a></li>
+                            </c:if>
+                            <c:if test="${sessionScope.username.isAdmin ==1 && sessionScope.username.isSell == 1}"> 
+                            <li><a href="Contact.jsp">Admin</a></li>
+                            <li><a href="ManageServlet">User</a></li>
+                            </c:if>
+                            <c:if test="${sessionScope.username.isAdmin == 1}">
+                            <li><a href="Contact.jsp">Admin</a></li>
+                            </c:if>
+
                     </ul>
                 </nav>
             </div>
