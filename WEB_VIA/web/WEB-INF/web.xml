@@ -44,6 +44,14 @@
         <servlet-name>ManageServlet</servlet-name>
         <servlet-class>controler.ManageServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DeleteServlet</servlet-name>
+        <servlet-class>controler.DeleteServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddServlet</servlet-name>
+        <servlet-class>controler.AddServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet</url-pattern>
@@ -87,6 +95,14 @@
     <servlet-mapping>
         <servlet-name>ManageServlet</servlet-name>
         <url-pattern>/ManageServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteServlet</servlet-name>
+        <url-pattern>/DeleteServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddServlet</servlet-name>
+        <url-pattern>/AddServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

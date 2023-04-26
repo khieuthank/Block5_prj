@@ -127,13 +127,13 @@
                             </div>
                             <div class="product__details__price">${DetailServelet.price}</div>
                             <p>${DetailServelet.description}</p>
-                            <div class="product__details__quantity">
+<!--                            <div class="product__details__quantity">
                                 <div class="quantity">
                                     <div class="pro-qty">
                                         <input type="text" value="1">
                                     </div>
                                 </div>
-                            </div>
+                            </div>-->
                             <a href="#" class="primary-btn">ADD TO CARD</a>
                             <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a>
                             <ul>

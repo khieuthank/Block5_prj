@@ -6,9 +6,8 @@ package controler;
 
 import dao.DAO;
 import entity.Account;
-import entity.Product;
+import entity.Category;
 import java.io.IOException;
-import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -20,7 +19,7 @@ import java.util.List;
  *
  * @author trung
  */
-public class ManageServlet extends HttpServlet {
+public class AddServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,15 +33,29 @@ public class ManageServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        request.setCharacterEncoding("UTF-8");
+
+        String pname = request.getParameter("name");
+        String pimage = request.getParameter("image");
+        String pprice = request.getParameter("price");
+        String ptitle = request.getParameter("title");
+        String pdescription = request.getParameter("description");
+        String pcategory = request.getParameter("category");
         HttpSession session = request.getSession();
         Account a = (Account) session.getAttribute("username");
-        int id = a.getId();
+        int sid = a.getId();
 
         DAO dao = new DAO();
-        List<Product> list = dao.getProductBySellID(id);
         
-        request.setAttribute("listP", list);
-        request.getRequestDispatcher("Manage.jsp").forward(request, response);
+        dao.insertProduct(pname, pimage, pprice, ptitle, pdescription, pcategory, sid);
+
+        List<Category> listC = dao.getAllCategory();
+        request.setAttribute("listC", listC);
+        
+        request.getRequestDispatcher("AddNewProduct.jsp").forward(request, response);
+ 
+         
+                
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

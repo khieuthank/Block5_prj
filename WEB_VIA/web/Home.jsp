@@ -113,7 +113,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-title">
-                            <h2>Featured Product</h2>
+                            <h2>Sản phẩm nổi bật</h2>
                         </div>
                         <div class="featured__controls">
                             <ul>
@@ -180,7 +180,7 @@
                                 <div class="latest-prdouct__slider__item">
 
                                     <c:forEach items="${listtp}" var="tp">
-                                        <a href="#" class="latest-product__item">
+                                        <a href="DetailServelet?pid=${tp.id}" class="latest-product__item">
                                             <div class="latest-product__item__pic">
                                                 <img src="${tp.image}" alt="">
                                             </div>
@@ -194,7 +194,7 @@
                                 </div>
                                 <div class="latest-prdouct__slider__item">
                                     <c:forEach items="${listAP}" var="ap">
-                                        <a href="#" class="latest-product__item">
+                                        <a href="DetailServelet?pid=${ap.id}" class="latest-product__item">
                                             <div class="latest-product__item__pic">
                                                 <img src="${ap.image}" alt="">
                                             </div>
@@ -216,7 +216,7 @@
                             <div class="latest-product__slider owl-carousel">
                                 <div class="latest-prdouct__slider__item">
                                     <c:forEach items="${listPP}" var="pp">
-                                        <a href="#" class="latest-product__item">
+                                        <a href="DetailServelet?pid=${pp.id}" class="latest-product__item">
                                             <div class="latest-product__item__pic">
                                                 <img src="${pp.image}" alt="">
                                             </div>
@@ -230,7 +230,7 @@
                                 </div>
                                 <div class="latest-prdouct__slider__item">
                                     <c:forEach items="${listAPP}" var="app">
-                                        <a href="#" class="latest-product__item">
+                                        <a href="DetailServelet?pid=${app.id}" class="latest-product__item">
                                             <div class="latest-product__item__pic">
                                                 <img src="${app.image}" alt="">
                                             </div>
@@ -253,7 +253,7 @@
                                 <div class="latest-prdouct__slider__item">
 
                                     <c:forEach items="${listCO}" var="co">
-                                        <a href="#" class="latest-product__item">
+                                        <a href="DetailServelet?pid=${co.id}" class="latest-product__item">
                                             <div class="latest-product__item__pic">
                                                 <img src="${co.image}" alt="">
                                             </div>
@@ -266,7 +266,7 @@
                                 </div>
                                 <div class="latest-prdouct__slider__item">
                                     <c:forEach items="${listACO}" var="aco">
-                                        <a href="#" class="latest-product__item">
+                                        <a href="DetailServelet?pid=${aco.id}" class="latest-product__item">
                                             <div class="latest-product__item__pic">
                                                 <img src="${aco.image}" alt="">
                                             </div>
