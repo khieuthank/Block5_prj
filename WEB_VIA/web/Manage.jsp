@@ -131,8 +131,8 @@
                                                 ${lp.title}  
                                             </td>
                                             <td class="shoping__cart__item__close">
-                                                 <a href="EditServlet?pid=${lp.id}"> <input type="submit" value="Edit" /> </a>
-                                                <a href="DeleteServlet?pid=${lp.id}"> <input type="submit" value="Del" /> </a>
+                                                <a href="EditServlet?pid=${lp.id}"> <input type="submit" value="Edit" /> </a>
+                                                <input type="submit" value="Del" onclick="mess(${lp.id})" /> 
                                             </td>
                                         </tr>
                                     </c:forEach>
@@ -150,16 +150,16 @@
                                 Thêm Sản Phẩm</a>
                         </div>
                     </div>
-                    
-                   
+
+
                 </div>
             </div>
         </section>
-        
+
         <!-- Shoping Cart Section End -->
 
         <jsp:include page="Footer.jsp"></jsp:include>
-
+       
         <!-- Js Plugins -->
         <script src="js/jquery-3.3.1.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
@@ -172,5 +172,14 @@
 
 
     </body>
+     <script>
+
+            function mess(id) {
+                var result = confirm("Bạn có chắc chắn muốn xóa?");
+                if (result === true) {
+                    window.location.href='DeleteServlet?pid='+id
+                }
+            }
+        </script>
 
 </html>
