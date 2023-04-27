@@ -46,16 +46,19 @@ public class AddServlet extends HttpServlet {
         int sid = a.getId();
 
         DAO dao = new DAO();
-        
-        dao.insertProduct(pname, pimage, pprice, ptitle, pdescription, pcategory, sid);
 
+        dao.insertProduct(pname, pimage, pprice, ptitle, pdescription, pcategory, sid);
         List<Category> listC = dao.getAllCategory();
         request.setAttribute("listC", listC);
-        
+        if (pname == null) {
+
+        } else {
+
+            request.setAttribute("mess", "Thêm Thành Công");
+        }
+
         request.getRequestDispatcher("AddNewProduct.jsp").forward(request, response);
- 
-         
-                
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

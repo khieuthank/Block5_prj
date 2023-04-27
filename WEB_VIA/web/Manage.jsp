@@ -131,7 +131,7 @@
                                                 ${lp.title}  
                                             </td>
                                             <td class="shoping__cart__item__close">
-<!--                                                 <a href="EditServlet?pid=${lp.id}"> <input type="submit" value="Edit" /> </a>-->
+                                                 <a href="EditServlet?pid=${lp.id}"> <input type="submit" value="Edit" /> </a>
                                                 <a href="DeleteServlet?pid=${lp.id}"> <input type="submit" value="Del" /> </a>
                                             </td>
                                         </tr>

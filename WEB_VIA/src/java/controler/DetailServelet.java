@@ -36,6 +36,7 @@ public class DetailServelet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String id = request.getParameter("pid");
+        
 
         DAO dao = new DAO();
         List<Product> listP = dao.getTop4ProductByCID(id);

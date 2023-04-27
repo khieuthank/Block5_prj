@@ -45,7 +45,7 @@
                                     <span>All departments</span>
                                 </div>
                                 <ul>
-                                    <li><a href="#">Fresh Meat</a></li>
+                                    
                                     
                                 </ul>
                             </div>
@@ -113,14 +113,14 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    
+                                   
                                         <tr>
                                             <td class="shoping__cart__item">
-                                                <img src="${AddCart.image}" alt="" style="width: 101px; height: 100px">
+                                                <img src="${Product.image}" alt="" style="width: 101px; height: 100px">
                                                 <h5></h5>
                                             </td>
                                             <td class="shoping__cart__price">
-                                                ${AddCart.price}
+                                                ${Product.price}
                                             </td>
                                             <td class="shoping__cart__quantity">
                                                 <div class="quantity">
@@ -133,11 +133,11 @@
                                                
                                             </td>
                                             <td class="shoping__cart__item__close">
-                                                <span class="icon_close"></span>
+                                                <a href="AddCartServlet"><span class="icon_close"></span></a>
                                             </td>
                                         </tr>
-                                                                         
                                         
+                                                                    
                                     </tbody>
                                 </table>
                             </div>
@@ -169,7 +169,7 @@
                                     <li>Subtotal <span>${AddCart.price}</span></li>
                                     <li>Total <span>${AddCart.price}</span></li>
                                 </ul>
-                                <a href="#" class="primary-btn">PROCEED TO CHECKOUT</a>
+                                <a href="CheckoutServlet" class="primary-btn">PROCEED TO CHECKOUT</a>
                             </div>
                         </div>
                     </div>

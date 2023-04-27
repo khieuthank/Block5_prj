@@ -39,11 +39,12 @@ public class AddCartServlet extends HttpServlet {
         String mess ="";
 
         DAO dao = new DAO();
-        
-        Product p = dao.getProductByID(id);
+        List<Product> listp = dao.getTop4ProductByCID(id);
+         Product p = dao.getProductByID(id);
         List<Category> listC = dao.getAllCategory();
 
-        request.setAttribute("AddCart", p);
+        request.setAttribute("Product", p);
+        request.setAttribute("ListP", listp);
         request.setAttribute("listC", listC);      
         request.setAttribute("mess", mess);
 

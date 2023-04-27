@@ -283,6 +283,7 @@ public class DAO {
         } catch (Exception e) {
         }
     }
+     
 
     public Product getProductByID(String id) {
         String query = "select * from product\n"
@@ -307,7 +308,7 @@ public class DAO {
 
     public List<Product> getTop4ProductByCID(String cid) {
         List<Product> list = new ArrayList<>();
-        String query = "  select top 4 * from product where cateID =?";
+        String query = "    select top 4 * from product where cateID =(SELECT cateID  FROM product WHERE id =?)";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
@@ -371,6 +372,8 @@ public class DAO {
         }
         return list;
     }
+    
+    
 //---------------------------------category----------------------
 
     public List<Category> getAllCategory() {

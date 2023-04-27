@@ -29,10 +29,7 @@
                         </div>
 
                         <div class="modal-body">					
-                            <div class="form-group">
-                                <label>ID</label>
-                                <input value="${detail.id}" name="id" type="text" class="form-control" readonly required>
-                            </div>
+                            
                             <div class="form-group">
                                 <label>Name</label>
                                 <input value="${detail.name}" name="name" type="text" class="form-control" required>
@@ -53,15 +50,7 @@
                                 <label>Description</label>
                                 <textarea name="description" class="form-control" required>${detail.description}</textarea>
                             </div>
-                            <div class="form-group">
-                                <label>Category</label>
-                                <select name="category" class="form-select" aria-label="Default select example">
-                                    <c:forEach items="${listC}" var="o">
-                                        <option value="${o.cid}">${o.cname}</option>
-                                    </c:forEach>
-                                </select>
-                            </div>
-
+                           
                         </div>
                         <div>${mess}</div> 
 

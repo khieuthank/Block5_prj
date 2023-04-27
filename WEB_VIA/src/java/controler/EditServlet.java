@@ -41,6 +41,7 @@ public class EditServlet extends HttpServlet {
         DAO dao = new DAO();
 
         dao.editProduct(pname, pimage, pprice, ptitle, pdescription, pcategory, pid);
+        request.setAttribute("id", pid);
         request.getRequestDispatcher("Edit.jsp").forward(request, response);
     }
 

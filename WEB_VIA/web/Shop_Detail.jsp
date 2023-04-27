@@ -247,7 +247,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <c:forEach items="${list}" var="list">
+                    <c:forEach items="${listP}" var="list">
                         <div class="col-lg-3 col-md-4 col-sm-6">
                             <div class="product__item">
                                 <div class="product__item__pic set-bg" data-setbg="${list.image}">
